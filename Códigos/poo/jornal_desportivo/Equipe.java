@@ -83,10 +83,8 @@ public class Equipe {
         }
     }
 
-
     public String toString() { // Retorna os dados do time/equipe
         return "\nNome: " +name+ "\nDivisão: " +division+ "\nEscalação: " + players
         + "\n[Vitórias: " +wins+ " | Derrotas: " +loses + "]";
     }
-    
 }

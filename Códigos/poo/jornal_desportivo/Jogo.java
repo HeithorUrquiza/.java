@@ -96,15 +96,12 @@ public class Jogo {
         this.loser = loser;
     }    
 
-
     public void scheduleGame(){ // Marca um jogo se ambos os times estiverem na mesma divisão
-        if(this.fromHome.getDivision().equals(this.visitor.getDivision())){
-            this.setMarked(true);
-        }
+        
     }   
 
     public String showTeams() { // Exibe todos os dados dos respectivos times
-        return "\n ** Time da Casa **" + fromHome.toString() + "\n\n** Time Visitante **" + visitor.toString();
+        return "\n ** Time Visitado **" + fromHome.toString() + "\n\n** Time Visitante **" + visitor.toString();
     }
     
     public String showScore(Equipe winner, int golsW, Equipe loser, int golsL){ // Coleta o time vencedor, perdedor e a quantidade de gols respectivamente
@@ -128,5 +125,7 @@ public class Jogo {
             " | Time de Casa: " + fromHome.getName() + " | Time Visitante: " + visitor.getName();
         }
         return text;
-    }   
+    }
+    
+    
 }

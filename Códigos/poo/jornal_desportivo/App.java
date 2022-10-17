@@ -40,17 +40,17 @@ public class App {
         j2[13] = new Jogador("Wissam Ben Yedder", "França", "Volante", true);*/
 
         ArrayList<Equipe> equipes = new ArrayList<Equipe>();
-        equipes.add(new Equipe("Primeira divisão", "Coritiba", jogadores1, "Rogério"));
+        equipes.add(new Equipe("Primeira divisão", "Coritiba", null, "Rogério"));
+        equipes.add(new Equipe("Primeria divisão", "Salvador", null, "Rafael"));
 
+
+        ArrayList<Jogo> jogos = new ArrayList<Jogo>(); // Vetor para jogos
+        jogos.add(new Jogo("20/04/2023", "18:00", "Lusail Stadium", "Fahad", equipes.get(0), equipes.get(1)));
         
-        System.out.println(equipes.get(0).toString());
-        equipes.get(0).demoteTeam();
-        System.out.println(equipes.get(0).toString());
+        jogos.get(0).scheduleGame();     
 
-        /*Jogo pl[] = new Jogo[3]; // Vetor para jogos
-        pl[0] = new Jogo("20/04/2023", "18:00", "Lusail Stadium", "Fahad", e[0], e[1]);
-        pl[1] = new Jogo("01/05/2023", "19:00", "Al Thumama Stadium", "Hussaim", e[1], e[0]);
-        pl[2] = new Jogo("17/05/2023", "20:00", "Stadium 974", "Muhammed", e[0], e[1]);
+        /*jogos.add(new Jogo("01/05/2023", "19:00", "Al Thumama Stadium", "Hussaim", e[1], e[0]));
+        jogos.add(new Jogo("17/05/2023", "20:00", "Stadium 974", "Muhammed", e[0], e[1]));
 
         pl[0].scheduleGame();
         pl[1].scheduleGame();

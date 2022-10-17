@@ -1,20 +1,21 @@
 package poo.jornal_desportivo;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 
-public class Equipe extends Divisao{
+public class Equipe {
     
     private String name;
-    private Jogador player[];
+    private String division;
+    private ArrayList<Jogador> players;
     private int wins;
     private int loses;
     private String technician;
 
-    
-    public Equipe(String division, String name, Jogador player[], String technician) {
-        super(division);
+
+    public Equipe(String division, String name, ArrayList<Jogador> players, String technician) {
         this.name = name;
-        this.player = player;
+        this.division = division;
+        this.players = players;
         this.wins = 0;
         this.loses = 0;
         this.technician = technician;
@@ -29,12 +30,20 @@ public class Equipe extends Divisao{
         this.name = name;
     }
 
-    public Jogador[] getPlayer() {
-        return player;
-    }    
+    public String getDivision() {
+        return division;
+    }
 
-    public void setPlayer(Jogador player[]) {
-        this.player = player;
+    public void setDivision(String division) {
+        this.division = division;
+    }
+
+    public ArrayList<Jogador> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(ArrayList<Jogador> players) {
+        this.players = players;
     }
 
     public int getWins() {
@@ -62,14 +71,12 @@ public class Equipe extends Divisao{
     }
     
 
-    @Override
     public void demoteTeam() { 
         if(this.getDivision().equals("Primeira divisão")){
             this.setDivision("Segunda divisão");
         }
     }
 
-    @Override
     public void promotTeam() {
         if(this.getDivision().equals("Segunda divisão")){
             this.setDivision("Primeira divisão");
@@ -77,11 +84,9 @@ public class Equipe extends Divisao{
     }
 
 
-    @Override
     public String toString() { // Retorna os dados do time/equipe
-        return "\nNome: " +name+ "\nDivisão: " +division+ "\nEscalação: " + Arrays.toString(player) 
+        return "\nNome: " +name+ "\nDivisão: " +division+ "\nEscalação: " + players
         + "\n[Vitórias: " +wins+ " | Derrotas: " +loses + "]";
     }
-
     
 }

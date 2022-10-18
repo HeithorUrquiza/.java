@@ -97,7 +97,9 @@ public class Jogo {
     }    
 
     public void scheduleGame(){ // Marca um jogo se ambos os times estiverem na mesma divisão
-        
+        if (this.fromHome.getDivision().equals(this.visitor.getDivision())) {
+            this.setMarked(true);
+        }
     }   
 
     public String showTeams() { // Exibe todos os dados dos respectivos times
@@ -113,6 +115,8 @@ public class Jogo {
             this.loser.setLoses(this.loser.getLoses() + 1);
             text = "\n-----------------------------\n" + "         " + this.getDate() + "\n\n ** Resultado da partida **\n" + "    " + 
             this.winner.getName() + " " + golsW + " x " + golsL + " " + this.loser.getName() + "\n-----------------------------";
+        } else {
+            text = "Essa partida ainda não aconteceu";
         }
         return text;
     }
@@ -123,6 +127,8 @@ public class Jogo {
         if(marked){
             text = "\nData: " + date + " | Hora: " +hour+ " | Local: " +locale+ " | Árbitro: " +judge+ 
             " | Time de Casa: " + fromHome.getName() + " | Time Visitante: " + visitor.getName();
+        } else {
+            text = "\nEsta partida não foi aprovada devido a diferença de classificação dos times";
         }
         return text;
     }

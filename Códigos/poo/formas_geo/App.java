@@ -1,10 +1,7 @@
 package poo.formas_geo;
 
-import java.util.Locale;
-
 public class App {
     public static void main(String[] args) throws Exception {
-        Locale.setDefault(new Locale("en", "US"));
         
         Quadrado q1 = new Quadrado("Quadrado", 15.0, 15.0);
         q1.calcArea();

@@ -45,7 +45,7 @@ public class App {
 
 
         ArrayList<Jogo> jogos = new ArrayList<Jogo>(); // Vetor para jogos
-        jogos.add(new Jogo("20/04/2023", "18:00", "Lusail Stadium", "Fahad", equipes.get(0), equipes.get(1)));
+        jogos.add(new Jogo("20/04/2023", "18:00", "Lusail Stadium", null, equipes.get(0), equipes.get(1)));
         
         jogos.get(0).scheduleGame();
         //System.out.println(jogos.get(0).toString());   

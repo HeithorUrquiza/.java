@@ -5,15 +5,15 @@ public class Jogo {
     private String date;
     private String hour;
     private String locale;
-    private String judge;
+    private Arbitro judge;
     private boolean marked;
     private Equipe visitor;
     private Equipe fromHome;
     private Equipe winner;
     private Equipe loser;
 
-    
-    public Jogo(String date, String hour, String locale, String judge, Equipe visitor, Equipe fromHome) {
+    // Construtor
+    public Jogo(String date, String hour, String locale, Arbitro judge, Equipe visitor, Equipe fromHome) {
         this.date = date;
         this.hour = hour;
         this.locale = locale;
@@ -23,7 +23,7 @@ public class Jogo {
         this.fromHome = fromHome;
     }
     
-
+    // Getters e Setters
     public String getDate() {
         return date;
     }
@@ -48,11 +48,11 @@ public class Jogo {
         this.locale = locale;
     }
 
-    public String getJudge() {
+    public Arbitro getJudge() {
         return judge;
     }
 
-    public void setJudge(String judge) {
+    public void setJudge(Arbitro judge) {
         this.judge = judge;
     }
 
@@ -96,10 +96,11 @@ public class Jogo {
         this.loser = loser;
     }    
 
+    // Métodos
     public void scheduleGame(){ // Marca um jogo se ambos os times estiverem na mesma divisão
         if (this.fromHome.getDivision().equals(this.visitor.getDivision())) {
             this.setMarked(true);
-            System.out.println("Marcado");
+            System.out.println("Jogo marcado");
         }
     }   
 
@@ -117,7 +118,7 @@ public class Jogo {
                 this.winner.setAmPoints(this.winner.getAmPoints() + 3);
                 this.loser.setLoses(this.loser.getLoses() + 1);
                 this.loser.setAmPoints(this.loser.getAmPoints() - 2);
-            } else {
+            } else { // Caso o jogo resulte em empate
                 this.setWinner(winner);
                 this.setLoser(loser);
                 this.winner.setAmPoints(this.winner.getAmPoints() + 1);

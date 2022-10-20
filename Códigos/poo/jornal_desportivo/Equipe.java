@@ -7,6 +7,7 @@ public class Equipe {
     private String name;
     private String division;
     private ArrayList<Jogador> players;
+    private int amPoints;
     private int wins;
     private int loses;
     private String technician;
@@ -16,6 +17,7 @@ public class Equipe {
         this.name = name;
         this.division = division;
         this.players = players;
+        this.amPoints = 20;
         this.wins = 0;
         this.loses = 0;
         this.technician = technician;
@@ -46,6 +48,14 @@ public class Equipe {
         this.players = players;
     }
 
+    public int getAmPoints() {
+        return amPoints;
+    }
+
+    public void setAmPoints(int amPoints) {
+        this.amPoints = amPoints;
+    }
+
     public int getWins() {
         return wins;
     }
@@ -72,19 +82,24 @@ public class Equipe {
     
 
     public void demoteTeam() { 
-        if(this.getDivision().equals("Primeira divisão")){
+        if(this.getDivision().equals("Regional") && this.getAmPoints() < 0){
+            this.setDivision("Primeira divisão");
+        }else if(this.getDivision().equals("Primeira divisão") && this.getAmPoints() < 0){
             this.setDivision("Segunda divisão");
         }
     }
 
     public void promotTeam() {
-        if(this.getDivision().equals("Segunda divisão")){
+        if(this.getDivision().equals("Segunda divisão") && this.getAmPoints() > 70){
             this.setDivision("Primeira divisão");
+        }else if(this.getDivision().equals("Primeira divisão") && this.getAmPoints() > 70){
+            this.setDivision("Regional");
         }
+
     }
 
     public String toString() { // Retorna os dados do time/equipe
         return "\nNome: " +name+ "\nDivisão: " +division+ "\nEscalação: " + players
-        + "\n[Vitórias: " +wins+ " | Derrotas: " +loses + "]";
+        + "\n[Pontos: "+amPoints+ "Vitórias: " +wins+ " | Derrotas: " +loses + "]";
     }
 }

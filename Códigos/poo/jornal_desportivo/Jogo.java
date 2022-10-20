@@ -99,6 +99,7 @@ public class Jogo {
     public void scheduleGame(){ // Marca um jogo se ambos os times estiverem na mesma divisão
         if (this.fromHome.getDivision().equals(this.visitor.getDivision())) {
             this.setMarked(true);
+            System.out.println("Marcado");
         }
     }   
 
@@ -109,10 +110,19 @@ public class Jogo {
     public String showScore(Equipe winner, int golsW, Equipe loser, int golsL){ // Coleta o time vencedor, perdedor e a quantidade de gols respectivamente
         String text = null;
         if(marked){ // Exibe o plcar caso esse jogo tenha sido aprovado/marcado
-            this.setWinner(winner);
-            this.setLoser(loser);
-            this.winner.setWins(this.winner.getWins() + 1);
-            this.loser.setLoses(this.loser.getLoses() + 1);
+            if (golsW != golsL) {
+                this.setWinner(winner);
+                this.setLoser(loser);
+                this.winner.setWins(this.winner.getWins() + 1);
+                this.winner.setAmPoints(this.winner.getAmPoints() + 3);
+                this.loser.setLoses(this.loser.getLoses() + 1);
+                this.loser.setAmPoints(this.loser.getAmPoints() - 2);
+            } else {
+                this.setWinner(winner);
+                this.setLoser(loser);
+                this.winner.setAmPoints(this.winner.getAmPoints() + 1);
+                this.loser.setAmPoints(this.loser.getAmPoints() + 1); 
+            }
             text = "\n-----------------------------\n" + "         " + this.getDate() + "\n\n ** Resultado da partida **\n" + "    " + 
             this.winner.getName() + " " + golsW + " x " + golsL + " " + this.loser.getName() + "\n-----------------------------";
         } else {

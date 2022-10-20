@@ -2,26 +2,32 @@ package poo.jornal_desportivo;
 
 public class Arbitro extends Pessoa {
 
-    private String type;
+    private String role;
 
     // Construtor
-    public Arbitro(String name, String function, String type) {
+    public Arbitro(String name, String function, String role) {
         super(name, function);
-        this.type = type;
+        this.role = role;
     }
 
     // Getters e Setters
-    public String getType() {
-        return type;
+    public String getRole() {
+        return role;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setRole(String role) {
+        this.role = role;
     }
 
     // Métodos
     public String referee(){
         return "";
     }
-    
+
+    @Override
+    public String toString() {
+        return "Nome: " +name+ " | Função: " +function+ " | Cargo: " +role;
+    }
+
+        
 }

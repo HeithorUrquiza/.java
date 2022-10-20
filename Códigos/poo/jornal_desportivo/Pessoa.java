@@ -23,5 +23,5 @@ public class Pessoa {
     }
     public void setFunction(String function) {
         this.function = function;
-    }
+    }  
 }

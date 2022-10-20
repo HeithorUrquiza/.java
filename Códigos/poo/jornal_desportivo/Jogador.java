@@ -1,29 +1,20 @@
 package poo.jornal_desportivo;
 
-public class Jogador {
+public class Jogador extends Pessoa{
     
-    private String name;
     private String nacionality;
     private String position;
     private boolean reserve;
 
-    
-    public Jogador(String name, String nacionality, String position, boolean reserve) {
-        this.name = name;
+    // Construtor
+    public Jogador(String name, String function, String nacionality, String position, boolean reserve) {
+        super(name, function);
         this.nacionality = nacionality;
         this.position = position;
         this.reserve = reserve;
     }
 
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    // Getters e Setters
     public String getNacionality() {
         return nacionality;
     }
@@ -48,9 +39,9 @@ public class Jogador {
         this.reserve = reserve;
     }
 
-
+    // Métodos
     @Override
     public String toString() { // Retorna as informações do jogador
-        return "\nNome: " +name+ " | Nacionalidade: " +nacionality+ " | Posição: " +position+ " | Reserva: " +reserve;
-    }    
+        return "\nNome: " +name+ " | Função: " +function+ " | Nacionalidade: " +nacionality+ " | Posição: " +position+ " | Reserva: " +reserve;
+    }
 }

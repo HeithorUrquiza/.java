@@ -10,20 +10,20 @@ public class Equipe {
     private int amPoints;
     private int wins;
     private int loses;
-    private String technician;
+    private Tecnico technician;
 
-
-    public Equipe(String division, String name, ArrayList<Jogador> players, String technician) {
+    // Construtor
+    public Equipe(String division, String name, ArrayList<Jogador> players, Tecnico technician) {
         this.name = name;
         this.division = division;
         this.players = players;
-        this.amPoints = 20;
+        this.amPoints = 15;
         this.wins = 0;
         this.loses = 0;
         this.technician = technician;
     }
 
-
+    // Getters e Setters
     public String getName() {
         return name;
     }
@@ -72,27 +72,27 @@ public class Equipe {
         this.loses = loses;
     }
 
-    public String getTechnician() {
+    public Tecnico getTechnician() {
         return technician;
     }
 
-    public void setTechnician(String technician) {
+    public void setTechnician(Tecnico technician) {
         this.technician = technician;
     }
     
-
-    public void demoteTeam() { 
-        if(this.getDivision().equals("Regional") && this.getAmPoints() < 0){
+    // Métodos
+    public void demoteTeam() { // Rebaixa a divisão do time
+        if(this.getDivision().equals("Regional") && this.getAmPoints() < 5){
             this.setDivision("Primeira divisão");
-        }else if(this.getDivision().equals("Primeira divisão") && this.getAmPoints() < 0){
+        }else if(this.getDivision().equals("Primeira divisão") && this.getAmPoints() < 5){
             this.setDivision("Segunda divisão");
         }
     }
 
-    public void promotTeam() {
-        if(this.getDivision().equals("Segunda divisão") && this.getAmPoints() > 70){
+    public void promotTeam() { // Sobe a divisão do time
+        if(this.getDivision().equals("Segunda divisão") && this.getAmPoints() > 40){
             this.setDivision("Primeira divisão");
-        }else if(this.getDivision().equals("Primeira divisão") && this.getAmPoints() > 70){
+        }else if(this.getDivision().equals("Primeira divisão") && this.getAmPoints() > 40){
             this.setDivision("Regional");
         }
 
@@ -100,6 +100,6 @@ public class Equipe {
 
     public String toString() { // Retorna os dados do time/equipe
         return "\nNome: " +name+ "\nDivisão: " +division+ "\nEscalação: " + players
-        + "\n[Pontos: "+amPoints+ "Vitórias: " +wins+ " | Derrotas: " +loses + "]";
+        + "\n[Pontos: "+amPoints+ "\nVitórias: " +wins+ " | Derrotas: " +loses + "]";
     }
 }

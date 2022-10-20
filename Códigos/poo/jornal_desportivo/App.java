@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class App {
     public static void main(String[] args) {
         
-        ArrayList<Jogador> jogadores1 = new ArrayList<Jogador>();
+        /*ArrayList<Jogador> jogadores1 = new ArrayList<Jogador>();
         jogadores1.add(new Jogador("Danny Ward", "País de Gales", "Goleiro", false));
         jogadores1.add(new Jogador("Wayne Hennessey", "País de Gales", "Goleiro", true));
         jogadores1.add(new Jogador("Ben Davies", "País de Gales", "Zageiro", false));
@@ -19,7 +19,7 @@ public class App {
         jogadores1.add(new Jogador("Daniel James", "País de Gales", "Atacante esquerdo", false));
         jogadores1.add(new Jogador("Brennan Johnson", "País de Gales", "Ponta esquerda", true));
         jogadores1.add(new Jogador("Neco Williams", "País de Gales", "Zagueiro", true));
-        jogadores1.add(new Jogador("Jonatham Williams", "País de Gales", "Volante", true));
+        jogadores1.add(new Jogador("Jonatham Williams", "País de Gales", "Volante", true));*/
 
 
 
@@ -40,14 +40,14 @@ public class App {
         j2[13] = new Jogador("Wissam Ben Yedder", "França", "Volante", true);*/
 
         ArrayList<Equipe> equipes = new ArrayList<Equipe>();
-        equipes.add(new Equipe("Segunda", "Coritiba", null, "Rogério"));
-        equipes.add(new Equipe("Segunda", "Salvador", null, "Rafael"));
+        equipes.add(new Equipe("Segunda", "Coritiba", null, null));
+        equipes.add(new Equipe("Segunda", "Salvador", null, null));
 
 
         ArrayList<Jogo> jogos = new ArrayList<Jogo>(); // Vetor para jogos
         jogos.add(new Jogo("20/04/2023", "18:00", "Lusail Stadium", "Fahad", equipes.get(0), equipes.get(1)));
         
-        jogos.get(0).scheduleGame();  
+        jogos.get(0).scheduleGame();
         //System.out.println(jogos.get(0).toString());   
 
         /*jogos.add(new Jogo("01/05/2023", "19:00", "Al Thumama Stadium", "Hussaim", e[1], e[0]));

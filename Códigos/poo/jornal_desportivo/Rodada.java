@@ -47,13 +47,13 @@ public class Rodada {
             if (this.getNumRound() == numRound){ // Consulta a rodada baseado no ID
                 text = rodada.toString();
             } else {
-                text = "Rodada não encontrada";
+                text = "\nRodada não encontrada";
             }
         }
         return text;
     }
 
-    public String consultaRound(ArrayList<Rodada> rounds, int year){
+    /*public String consultaRound(ArrayList<Rodada> rounds, int year){
         String text = null;
         for (Rodada rodada : rounds) {
             if (this.getYear() == year) {
@@ -63,7 +63,7 @@ public class Rodada {
             }
         }
         return text;
-    }
+    }*/
 
     @Override
     public String toString() {

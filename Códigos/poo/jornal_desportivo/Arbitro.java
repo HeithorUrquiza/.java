@@ -26,7 +26,7 @@ public class Arbitro extends Pessoa {
 
     @Override
     public String toString() {
-        return "Nome: " +name+ " | Função: " +function+ " | Cargo: " +role;
+        return "\nNome: " +name+ " | Função: " +function+ " | Cargo: " +role;
     }
 
         

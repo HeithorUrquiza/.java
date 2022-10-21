@@ -9,15 +9,15 @@ public class Tecnico extends Pessoa{
     
     // Métodos
     public String deviseTactics(){
-        return "{*Fazendo o planejamento de jogo*}";
+        return "\n{*Fazendo o planejamento de jogo*}";
     }
 
     public String passTactics(){
-        return "{*Reunindo o time e repassando as táticas*}";
+        return "\n{*Reunindo o time e repassando as táticas*}";
     }
 
     @Override
     public String toString() {
-        return "Nome: " +name+ " | Função: " +function;
+        return "\nNome: " +name+ " | Função: " +function;
     }
 }

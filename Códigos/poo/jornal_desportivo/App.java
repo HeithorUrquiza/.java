@@ -48,6 +48,8 @@ public class App {
         jogos.add(new Jogo("20/04/2023", "18:00", "Lusail Stadium", null, equipes.get(0), equipes.get(1)));
         
         jogos.get(0).scheduleGame();
+        Tipo_camp ty = Tipo_camp.PRIMEIRA_DIVISAO;
+        System.out.println("\n" + ty);
         //System.out.println(jogos.get(0).toString());   
 
         /*jogos.add(new Jogo("01/05/2023", "19:00", "Al Thumama Stadium", "Hussaim", e[1], e[0]));

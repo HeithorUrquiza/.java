@@ -5,6 +5,7 @@ public class Jogador extends Pessoa{
     private String nacionality;
     private String position;
     private boolean reserve;
+    private int cards;
 
     // Construtor
     public Jogador(String name, String function, String nacionality, String position, boolean reserve) {
@@ -12,6 +13,7 @@ public class Jogador extends Pessoa{
         this.nacionality = nacionality;
         this.position = position;
         this.reserve = reserve;
+        this.cards = 0;
     }
 
     // Getters e Setters
@@ -37,6 +39,14 @@ public class Jogador extends Pessoa{
 
     public void setReserve(boolean reserve) {
         this.reserve = reserve;
+    }
+
+    public int getCards() {
+        return cards;
+    }
+
+    public void setCards(int cards) {
+        this.cards = cards;
     }
 
     // Métodos

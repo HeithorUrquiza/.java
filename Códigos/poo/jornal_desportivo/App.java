@@ -5,21 +5,33 @@ import java.util.ArrayList;
 public class App {
     public static void main(String[] args) {
         
-        /*ArrayList<Jogador> jogadores1 = new ArrayList<Jogador>();
-        jogadores1.add(new Jogador("Danny Ward", "País de Gales", "Goleiro", false));
-        jogadores1.add(new Jogador("Wayne Hennessey", "País de Gales", "Goleiro", true));
-        jogadores1.add(new Jogador("Ben Davies", "País de Gales", "Zageiro", false));
-        jogadores1.add(new Jogador("Chris Mepham", "País de Gales", "Lateral direito", false));
-        jogadores1.add(new Jogador("Connor Roberts", "País de Gales", "Lateral esquerdo", false));
-        jogadores1.add(new Jogador("Joe Morrell", "País de Gales", "Meio campo", false));
-        jogadores1.add(new Jogador("Aaron Ramsey", "País de Gales", "Meio esquerdo", false));
-        jogadores1.add(new Jogador("Harry Wilson", "País de Gales", "Meio direito", false));
-        jogadores1.add(new Jogador("Gareth Bale", "País de Gales", "Atacante direito", false));
-        jogadores1.add(new Jogador("Kieffer Moore", "País de Gales", "Atacante", false));
-        jogadores1.add(new Jogador("Daniel James", "País de Gales", "Atacante esquerdo", false));
-        jogadores1.add(new Jogador("Brennan Johnson", "País de Gales", "Ponta esquerda", true));
-        jogadores1.add(new Jogador("Neco Williams", "País de Gales", "Zagueiro", true));
-        jogadores1.add(new Jogador("Jonatham Williams", "País de Gales", "Volante", true));*/
+        ArrayList<Tecnico> tecnicos = new ArrayList<Tecnico>();
+        tecnicos.add(new Tecnico("Ramalho", "Técnico"));
+        tecnicos.add(new Tecnico("Bringstom", "Técnico"));
+        
+
+        ArrayList<Arbitro> arbitros = new ArrayList<Arbitro>();
+        arbitros.add(new Arbitro("Zeca", "Arbitragem", "Juíz"));
+        arbitros.add(new Arbitro("Peralta", "Arbitragem", "Bandeirinha"));
+        arbitros.add(new Arbitro("Whilliawn", "Arbitragem", "Juíz"));
+        arbitros.add(new Arbitro("Ramsés", "Arbitragem", "Bandeirinha"));
+        arbitros.add(new Arbitro("Ricardo", "Arbitragem", "Bandeirinha"));
+        
+
+        ArrayList<Jogador> jogadores1 = new ArrayList<Jogador>();
+        jogadores1.add(new Jogador("Danny Ward", "Jogador", "País de Gales", "Goleiro", false));
+        jogadores1.add(new Jogador("Ben Davies", "Jogador", "País de Gales", "Zageiro", false));
+        jogadores1.add(new Jogador("Chris Mepham", "Jogador", "País de Gales", "Lateral direito", false));
+        jogadores1.add(new Jogador("Connor Roberts", "Jogador", "País de Gales", "Lateral esquerdo", false));
+        jogadores1.add(new Jogador("Joe Morrell", "Jogador", "País de Gales", "Meio campo", false));
+        jogadores1.add(new Jogador("Aaron Ramsey", "Jogador", "País de Gales", "Meio esquerdo", false));
+        jogadores1.add(new Jogador("Harry Wilson", "Jogador", "País de Gales", "Meio direito", false));
+        jogadores1.add(new Jogador("Gareth Bale", "Jogador", "País de Gales", "Atacante direito", false));
+        jogadores1.add(new Jogador("Kieffer Moore", "Jogador", "País de Gales", "Atacante", false));
+        jogadores1.add(new Jogador("Daniel James", "Jogador", "País de Gales", "Atacante esquerdo", false));
+        jogadores1.add(new Jogador("Brennan Johnson", "Jogador", "País de Gales", "Ponta esquerda", true));
+        jogadores1.add(new Jogador("Neco Williams", "Jogador", "País de Gales", "Zagueiro", true));
+        jogadores1.add(new Jogador("Jonatham Williams", "Jogador", "País de Gales", "Volante", true));
 
 
 
@@ -39,7 +51,7 @@ public class App {
         j2[12] = new Jogador("Aurélien Tchouaméni","França", "Zagueiro", true);
         j2[13] = new Jogador("Wissam Ben Yedder", "França", "Volante", true);*/
 
-        ArrayList<Equipe> equipes = new ArrayList<Equipe>();
+        /*ArrayList<Equipe> equipes = new ArrayList<Equipe>();
         equipes.add(new Equipe("Segunda", "Coritiba", null, null));
         equipes.add(new Equipe("Segunda", "Salvador", null, null));
 

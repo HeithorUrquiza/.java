@@ -20,8 +20,19 @@ public class Arbitro extends Pessoa {
     }
 
     // Métodos
-    public String referee(){
-        return "";
+    public String referee(Jogador jogador){ //Aplicação de penalidade
+        String text = null;
+        if (this.getRole().equals("Bandeirinha")){
+            text = "Impedimento marcado para " +jogador.getName();
+        } else {
+            if(jogador.getCards() == 0){
+                text = "Cartão amarelo para " +jogador.getName();
+                jogador.setCards(jogador.getCards() + 1);
+            } else if (jogador.getCards() == 2){
+                text = "Cartão vermelho para " +jogador.getName();
+            }
+        }
+        return text;
     }
 
     @Override

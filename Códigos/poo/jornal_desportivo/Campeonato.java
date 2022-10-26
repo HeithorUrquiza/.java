@@ -7,11 +7,11 @@ public class Campeonato implements Consulta{
     private int idChamp;
     private String name;
     private int year;
-    private String type;
+    private Tipo_camp type;
     private ArrayList<Rodada> rounds;
 
     // Construtor
-    public Campeonato(int idChamp, String name, int year, String type, ArrayList<Rodada> rounds) {
+    public Campeonato(int idChamp, String name, int year, Tipo_camp type, ArrayList<Rodada> rounds) {
         this.idChamp = idChamp;
         this.name = name;
         this.year = year;
@@ -44,11 +44,11 @@ public class Campeonato implements Consulta{
         this.year = year;
     }
 
-    public String getType() {
+    public Tipo_camp getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(Tipo_camp type) {
         this.type = type;
     }
 
@@ -83,10 +83,14 @@ public class Campeonato implements Consulta{
     public String displaySchedule() {
         return "\nEste campeonato está registrado como: " + this.getType();
     }
-
+    
     @Override
     public String toString() {
         return "\nID: " +idChamp + " | Campeonato " + name + "\nAno: " + year + "\nTipo: " + type + "\nProgramação: "
         + rounds;
     }
+
+    
+
+    
 }

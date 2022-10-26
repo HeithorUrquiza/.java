@@ -5,20 +5,20 @@ import java.util.ArrayList;
 public class App {
     public static void main(String[] args) {
         
-        ArrayList<Tecnico> tecnicos = new ArrayList<Tecnico>();
+        ArrayList<Tecnico> tecnicos = new ArrayList<Tecnico>(); // Técnicos
         tecnicos.add(new Tecnico("Ramalho", "Técnico"));
         tecnicos.add(new Tecnico("Bringstom", "Técnico"));
         
 
-        ArrayList<Arbitro> arbitros = new ArrayList<Arbitro>();
+        ArrayList<Arbitro> arbitros = new ArrayList<Arbitro>(); // Árbitros
         arbitros.add(new Arbitro("Zeca", "Arbitragem", "Juíz"));
         arbitros.add(new Arbitro("Peralta", "Arbitragem", "Bandeirinha"));
         arbitros.add(new Arbitro("Whilliawn", "Arbitragem", "Juíz"));
         arbitros.add(new Arbitro("Ramsés", "Arbitragem", "Bandeirinha"));
         arbitros.add(new Arbitro("Ricardo", "Arbitragem", "Bandeirinha"));
-        
 
-        ArrayList<Jogador> jogadores1 = new ArrayList<Jogador>();
+
+        ArrayList<Jogador> jogadores1 = new ArrayList<Jogador>(); // Jogadores
         jogadores1.add(new Jogador("Danny Ward", "Jogador", "País de Gales", "Goleiro", false));
         jogadores1.add(new Jogador("Ben Davies", "Jogador", "País de Gales", "Zageiro", false));
         jogadores1.add(new Jogador("Chris Mepham", "Jogador", "País de Gales", "Lateral direito", false));
@@ -33,54 +33,49 @@ public class App {
         jogadores1.add(new Jogador("Neco Williams", "Jogador", "País de Gales", "Zagueiro", true));
         jogadores1.add(new Jogador("Jonatham Williams", "Jogador", "País de Gales", "Volante", true));
 
-
-
-        /*Jogador j2[] = new Jogador[14]; // Vetor para jogador 2
-        j2[0] = new Jogador("Hugo Lloris", "França", "Goleiro", false);
-        j2[1] = new Jogador("Lucas Hernández", "França", "Goleiro", true);
-        j2[2] = new Jogador("Jules Koundé", "França", "Zageiro", false);
-        j2[3] = new Jogador("Presnel Kimpembe", "França", "Lateral direito", false);
-        j2[4] = new Jogador("Theo Hernández", "França", "Lateral esquerdo", false);
-        j2[5] = new Jogador("N'Golo Kanté", "França", "Meio campo", false);
-        j2[6] = new Jogador("Paul Pogba", "França", "Meio esquerdo", false);
-        j2[7] = new Jogador("Adrien Rabiot", "França", "Meio direito", false);
-        j2[8] = new Jogador("Kylian Mbappé", "França", "Atacante direito", false);
-        j2[9] = new Jogador("Antoine Griezmann", "França", "Atacante", false);
-        j2[10] = new Jogador("Karin Benzema", "França", "Atacante esquerdo", false);
-        j2[11] = new Jogador("Benjamin Pavard", "França", "Ponta esquerda", true);
-        j2[12] = new Jogador("Aurélien Tchouaméni","França", "Zagueiro", true);
-        j2[13] = new Jogador("Wissam Ben Yedder", "França", "Volante", true);*/
-
-        /*ArrayList<Equipe> equipes = new ArrayList<Equipe>();
-        equipes.add(new Equipe("Segunda", "Coritiba", null, null));
-        equipes.add(new Equipe("Segunda", "Salvador", null, null));
-
-
-        ArrayList<Jogo> jogos = new ArrayList<Jogo>(); // Vetor para jogos
-        jogos.add(new Jogo("20/04/2023", "18:00", "Lusail Stadium", null, equipes.get(0), equipes.get(1)));
         
+        ArrayList<Jogador> jogadores2 = new ArrayList<Jogador>();
+        jogadores2.add(new Jogador("Hugo Lloris", "Jogador", "França", "Goleiro", false));
+        jogadores2.add(new Jogador("Lucas Hernández", "Jogador", "França", "Goleiro", true));
+        jogadores2.add(new Jogador("Jules Koundé", "Jogador", "França", "Zageiro", false));
+        jogadores2.add(new Jogador("Presnel Kimpembe", "Jogador", "França", "Lateral direito", false));
+        jogadores2.add(new Jogador("Theo Hernández", "Jogador", "França", "Lateral esquerdo", false));
+        jogadores2.add(new Jogador("N'Golo Kanté", "Jogador", "França", "Meio campo", false));
+        jogadores2.add(new Jogador("Paul Pogba", "Jogador", "França", "Meio esquerdo", false));
+        jogadores2.add(new Jogador("Adrien Rabiot", "Jogador", "França", "Meio direito", false));
+        jogadores2.add(new Jogador("Kylian Mbappé", "Jogador", "França", "Atacante direito", false));
+        jogadores2.add(new Jogador("Antoine Griezmann", "Jogador", "França", "Atacante", false));
+        jogadores2.add(new Jogador("Karin Benzema", "Jogador", "França", "Atacante esquerdo", false));
+        jogadores2.add(new Jogador("Benjamin Pavard", "Jogador", "França", "Ponta esquerda", true));
+        jogadores2.add(new Jogador("Aurélien Tchouaméni", "Jogador", "França", "Zagueiro", true));
+        jogadores2.add(new Jogador("Wissam Ben Yedder", "Jogador", "França", "Volante", true));
+        
+        
+        ArrayList<Equipe> equipes = new ArrayList<Equipe>(); // Equipes
+        equipes.add(new Equipe("Primeira divisão", "Gales", jogadores1, tecnicos.get(0)));
+        equipes.add(new Equipe("Primeira divisão", "França", jogadores2, tecnicos.get(1)));
+
+
+        ArrayList<Jogo> jogos = new ArrayList<Jogo>(); // Jogos
+        jogos.add(new Jogo("02/04/2023", "18:00", "Lusail Stadium", arbitros.get(0), equipes.get(0), equipes.get(1)));
+        jogos.add(new Jogo("20/04/2023", "18:00", "Lusail Stadium", arbitros.get(1), equipes.get(1), equipes.get(0)));
+
+
         jogos.get(0).scheduleGame();
-        Tipo_camp ty = Tipo_camp.PRIMEIRA_DIVISAO;
-        System.out.println("\n" + ty);
-        //System.out.println(jogos.get(0).toString());   
+        jogos.get(1).scheduleGame();
+        /*System.out.println(jogos.get(0).showTeams());
+        System.out.println(jogos.get(0).showScore(equipes.get(0), 0, equipes.get(1), 0));
+        System.out.println(equipes.toString());
+        System.out.println(jogos.get(0).showScore(equipes.get(0), 2, equipes.get(1), 0));
+        System.out.println(equipes.toString());*/
 
-        /*jogos.add(new Jogo("01/05/2023", "19:00", "Al Thumama Stadium", "Hussaim", e[1], e[0]));
-        jogos.add(new Jogo("17/05/2023", "20:00", "Stadium 974", "Muhammed", e[0], e[1]));
+        ArrayList<Rodada> rodadas = new ArrayList<Rodada>(); // Rodadas
+        rodadas.add(new Rodada(1, 2022, jogos));
 
-        pl[0].scheduleGame();
-        pl[1].scheduleGame();
-        pl[2].scheduleGame();
-
-        Campeonato cp = new Campeonato("Copinha", pl);
-        System.out.println(cp.rounds());
-
-        System.out.println(pl[0].showTeams());
-        System.out.println(pl[0].showScore(e[1], 2, e[0], 1));
-
-        e[0].demoteTeam();
-        System.out.println(e[0].toString());
-        System.out.println(e[1].toString());*/
-        
+    
+        ArrayList<Campeonato> campeonatos = new ArrayList<Campeonato>();
+        campeonatos.add(new Campeonato(1, "Copinha", 2022, Tipo_camp.PRIMEIRA_DIVISAO, rodadas));
        
+        System.out.println(campeonatos.get(0).consultChampionship(campeonatos, 1));
     }
 }

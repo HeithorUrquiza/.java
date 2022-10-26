@@ -20,16 +20,17 @@ public class Arbitro extends Pessoa {
     }
 
     // Métodos
-    public String referee(Jogador jogador){ //Aplicação de penalidade
+    public String referee(Arbitro arbitro,Jogador jogador){ //Aplicação de penalidade
         String text = null;
-        if (this.getRole().equals("Bandeirinha")){
-            text = "Impedimento marcado para " +jogador.getName();
+        if (arbitro.getRole().equals("Bandeirinha")){
+            text = "\nImpedimento marcado para " +jogador.getName();
         } else {
-            if(jogador.getCards() == 0){
-                text = "Cartão amarelo para " +jogador.getName();
+            if(jogador.getCards() < 1){
+                text = "\nCartão amarelo para " +jogador.getName();
                 jogador.setCards(jogador.getCards() + 1);
-            } else if (jogador.getCards() == 2){
-                text = "Cartão vermelho para " +jogador.getName();
+            } else if (jogador.getCards() == 1){
+                text = "\nCartão vermelho para " +jogador.getName();
+                jogador.setCards(jogador.getCards() + 1);
             }
         }
         return text;

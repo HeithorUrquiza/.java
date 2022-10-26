@@ -98,14 +98,13 @@ public class Jogo {
 
     // Métodos
     public void scheduleGame(){ // Marca um jogo se ambos os times estiverem na mesma divisão
-        if (this.fromHome.getDivision().equals(this.visitor.getDivision())) {
+        if (this.fromHome.getDivision().equals(this.visitor.getDivision()) && this.fromHome.getName() != this.visitor.getName()) {
             this.setMarked(true);
-            System.out.println("Jogo marcado");
         }
     }   
 
     public String showTeams() { // Exibe todos os dados dos respectivos times
-        return "\n ** Time Visitado **" + fromHome.toString() + "\n\n** Time Visitante **" + visitor.toString();
+        return "\n {** Time Visitado **} \n-----------------------" + fromHome.toString() + "\n\n{** Time Visitante **} \n-----------------------" + visitor.toString();
     }
     
     public String showScore(Equipe winner, int golsW, Equipe loser, int golsL){ // Coleta o time vencedor, perdedor e a quantidade de gols respectivamente
@@ -136,7 +135,7 @@ public class Jogo {
     public String toString() { // Retona as informações de cada jogo
         String text = null;
         if(marked){
-            text = "\nData: " + date + " | Hora: " +hour+ " | Local: " +locale+ " | Árbitro: " +judge+ 
+            text = "\nData: " + date + " | Hora: " +hour+ " | Local: " +locale+ " | Árbitro: " +judge.getName()+ 
             " | Time de Casa: " + fromHome.getName() + " | Time Visitante: " + visitor.getName();
         } else {
             text = "\nEsta partida não foi aprovada devido a diferença de classificação dos times";

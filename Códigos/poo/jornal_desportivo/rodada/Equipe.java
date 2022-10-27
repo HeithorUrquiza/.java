@@ -3,26 +3,28 @@ package poo.jornal_desportivo.rodada;
 import java.util.ArrayList;
 
 import poo.jornal_desportivo.pessoas.Tecnico;
-import poo.jornal_desportivo.TipoCampeonato;
+import poo.jornal_desportivo.Tipo;
 import poo.jornal_desportivo.pessoas.Jogador;
 
 public class Equipe {
 
   private String nome;
-  private TipoCampeonato divisao;
+  private String divisao;
   private int qtdPontos;
   private int vitorias;
   private int derrotas;
   private Tecnico tecnico;
-  private ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
+  private ArrayList<Jogador> jogadores;
 
 
-  public Equipe(String nome, TipoCampeonato divisao) {
+  public Equipe(String nome, String divisao, Tecnico tecnico, ArrayList<Jogador> jogadores) {
     this.nome = nome;
     this.divisao = divisao;
+    this.tecnico = tecnico;
     this.qtdPontos = 15;
     this.vitorias = 0;
     this.derrotas = 0;
+    this.jogadores = jogadores;
   }
 
 
@@ -34,11 +36,11 @@ public class Equipe {
     this.nome = nome;
   }
 
-  public TipoCampeonato getDivisao() {
+  public String getDivisao() {
     return divisao;
   }
 
-  public void setDivisao(TipoCampeonato divisao) {
+  public void setDivisao(String divisao) {
     this.divisao = divisao;
   }
 
@@ -83,14 +85,29 @@ public class Equipe {
   }
 
 
-  public void adicionarTecnico(String nome, String funcao){
-    Tecnico tec = new Tecnico(nome, funcao);
-    System.out.println("Foi definido que " + tec.getNome() + " é o atual técnico da equipe " + this.nome);
+  public void promoverEquipe(){
+    if (this.getDivisao().equals(Tipo.SEGUNDA_DIVISAO.getTipo()) && this.getQtdPontos() > 50) {
+      this.setDivisao(Tipo.PRIMEIRA_DIVISAO.getTipo());
+      this.setQtdPontos(10);
+    } else if (this.getDivisao().equals(Tipo.PRIMEIRA_DIVISAO.getTipo()) && this.getQtdPontos() > 50) {
+      this.setDivisao(Tipo.REGIONAL.getTipo());
+      this.setQtdPontos(10);
+    }
   }
-  
-  public void adicionarJogador(String nome, String nacionalidade, String posicao, boolean titular){
-    Jogador base = new Jogador(nome, nacionalidade, posicao, titular);
-    jogadores.add(base);
-    System.out.println("Jogador " + base.getNome() + " entrou pelo " + this.nome);
+
+  public void rebaixarEquipe(){
+    if (this.getDivisao().equals(Tipo.REGIONAL.getTipo()) && this.getQtdPontos() < 10) {
+      this.setDivisao(Tipo.PRIMEIRA_DIVISAO.getTipo());
+      this.setQtdPontos(12);
+    } else if (this.getDivisao().equals(Tipo.PRIMEIRA_DIVISAO.getTipo()) && this.getQtdPontos() < 10) {
+      this.setDivisao(Tipo.SEGUNDA_DIVISAO.getTipo());
+      this.setQtdPontos(12);
+    }
+  }
+
+  @Override
+  public String toString() {
+      return nome + "\nDivisao: " + divisao + "\nPontos: " + qtdPontos + "\nVitorias:" + vitorias
+              + " | Derrotas: " + derrotas + "\nTécnico: " + tecnico.getNome() + "\nEscalação:" + jogadores;
   }
 }

@@ -1,99 +1,72 @@
 package poo.jornal_desportivo;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+//import java.util.Collections;
 
-import classes.Pessoas.Arbitro;
-import classes.Pessoas.Equipe;
-import classes.Rodada.Rodada;
+import poo.jornal_desportivo.rodada.Rodada;
 
 public class Campeonato implements Interface{
 
   private int idCamp;
   private int anoCamp;
   private String nomeCamp;
-  private TipoCampeonato tipoC;
-  private List<Rodada> rodadas = new ArrayList<Rodada>();
-  private List<Equipe> equipes = new ArrayList<Equipe>();
-  List<Arbitro> arbtr = new ArrayList<>();
+  private String tipoC;
+  private ArrayList<Rodada> rodadas;
 
   
-  public Campeonato(int idCamp, int anoCamp, String nomeCamp, TipoCampeonato tipoC) {
+  public Campeonato(int idCamp, int anoCamp, String nomeCamp, String tipoC, ArrayList<Rodada> rodadas) {
     this.idCamp = idCamp;
     this.anoCamp = anoCamp;
     this.nomeCamp = nomeCamp;
     this.tipoC = tipoC;
+    this.rodadas = rodadas;
   }
+
+
   public int getIdCamp() {
     return idCamp;
   }
+
   public void setIdCamp(int idCamp) {
     this.idCamp = idCamp;
   }
+
   public int getAnoCamp() {
     return anoCamp;
   }
+
   public void setAnoCamp(int anoCamp) {
     this.anoCamp = anoCamp;
   }
+
   public String getNomeCamp() {
     return nomeCamp;
   }
+
   public void setNomeCamp(String nomeCamp) {
     this.nomeCamp = nomeCamp;
   }
-  public TipoCampeonato getTipoC() {
+
+  public String getTipoC() {
     return tipoC;
   }
-  public void setTipoC(TipoCampeonato tipoC) {
+
+  public void setTipoC(String tipoC) {
     this.tipoC = tipoC;
   }
-  public List<Rodada> getRodadas() {
+
+  public ArrayList<Rodada> getRodadas() {
     return rodadas;
   }
-  public void setRodadas(List<Rodada> rodadas) {
+
+  public void setRodadas(ArrayList<Rodada> rodadas) {
     this.rodadas = rodadas;
   }
   
-  public void adicionarEquipe(String nome, int qtdPontos, int vitorias, int derrotas){
-    Equipe eqp = new Equipe(nome, qtdPontos, vitorias, derrotas);
-    equipes.add(eqp);
-  }
-
-  public void adicionarRodadas(int numRodada, int anoRodada){
-    Rodada rodada = new Rodada(numRodada, anoRodada);
-    rodadas.add(rodada);
-  }
-
-  public void adicionarArbitro(String nome, String cargo){
-    Arbitro arb = new Arbitro(nome, cargo);
-    arbtr.add(arb);
-  }
-
-  public void consultarRod(int numRodada){
-    int temp = 0;
-    for(int j = 0; j < rodadas.size(); j++){
-      if(rodadas.get(j).getNumRodada() == numRodada){
-        System.out.println("\nAno: " + rodadas.get(j).getAnoRodada());
-        System.out.println("Número de Identificação: " + rodadas.get(j).getNumRodada());
-        System.out.println("Número de Jogos: " + rodadas.get(0).jogo.size() + "\n");
-        temp = j;
-      }
-    }
-    for(int i = 0; i < rodadas.get(temp).jogo.size(); i ++){
-      System.out.println("\n -=-=-=-=" + (i + 1) + "=-=-=-=-");
-      System.out.println("Data: " + rodadas.get(temp).jogo.get(i).getData());
-      System.out.println("Local: " + rodadas.get(temp).jogo.get(i).getLocal());
-      System.out.println("Árbitro: " + rodadas.get(temp).jogo.get(i).getArbitro().getNome());
-      System.out.println("Visitante: " + rodadas.get(temp).jogo.get(i).getVisitante().getNome());
-      System.out.println("Visitado: " + rodadas.get(temp).jogo.get(i).getVisitado().getNome());
-    }
-  }
-
+  // Métodos
   @Override
   public void exibirClassif(){
-    List<String> classif = new ArrayList<>();
+    /*List<String> classif = new ArrayList<>();
     String temp = new String();
     for(int i = 0; i < equipes.size(); i++){
       temp = equipes.get(i).getQtdPontos() + " :: " + equipes.get(i).getNome();
@@ -103,22 +76,29 @@ public class Campeonato implements Interface{
     System.out.println("\n\nClassificação:\n");
     for(int i = 0; i < classif.size(); i++){
       System.out.println(classif.get(i));
+    }    */
+  }
+
+  @Override
+  public String consultarCamp(ArrayList<Campeonato> campeonatos, int idCamp) {
+    String text = null;
+    for (Campeonato camps : campeonatos) {
+        if (this.idCamp == idCamp) {
+          text = camps.toString(); 
+        } else {
+          text = "Campeonato não encontrado";
+        }
     }
-
-    
-  }
-  public List<Equipe> getEquipes() {
-    return equipes;
-  }
-  public void setEquipes(List<Equipe> equipes) {
-    this.equipes = equipes;
-  }
-  public List<Arbitro> getArbtr() {
-    return arbtr;
-  }
-  public void setArbtr(List<Arbitro> arbtr) {
-    this.arbtr = arbtr;
+    return text;
   }
 
-  
+  @Override
+  public String exibirProgramacao() {
+    return "\nRodadas: " +rodadas;
+  }
+
+  @Override
+  public String toString() {
+    return "ID: " +idCamp+ " | Campeonato " +nomeCamp+ "\nAno: " +anoCamp+ "\nTipo: " +tipoC+ "\nRodadas: " +rodadas;
+  }
 }

@@ -1,14 +1,14 @@
 package poo.jornal_desportivo;
 
-public enum TipoCampeonato {
+public enum Tipo {
 
-  REGIONAL("Campeonato Regional"),
+  REGIONAL("Regional"),
   PRIMEIRA_DIVISAO("Primeira Divisão"),
   SEGUNDA_DIVISAO("Segunda Divisão");
 
   private String tipo;
 
-  TipoCampeonato(String tipo){
+  Tipo(String tipo){
     this.tipo = tipo;
   }
   

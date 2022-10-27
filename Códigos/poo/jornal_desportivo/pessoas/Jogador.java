@@ -48,4 +48,10 @@ public class Jogador extends Pessoa {
   public void setQtdCartao(int qtdCartao) {
     this.qtdCartao = qtdCartao;
   }
+
+
+  @Override
+  public String toString() {
+      return "\nNome: " +getNome()+ " | Nacionalidade: " +nacionalidade+ " | Posição: " +posicao+ " | Títular: " +titular;
+  }
 }

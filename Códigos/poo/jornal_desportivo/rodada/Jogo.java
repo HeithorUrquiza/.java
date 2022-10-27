@@ -1,7 +1,6 @@
-package classes.Jogo;
+package poo.jornal_desportivo.rodada;
 
-import classes.Pessoas.Arbitro;
-import classes.Pessoas.Equipe;
+import poo.jornal_desportivo.pessoas.Arbitro;
 
 public class Jogo {
 
@@ -9,11 +8,12 @@ public class Jogo {
   private String local;
   private String resultado;
   private Arbitro arbitro;
-  private boolean marcado = true;
+  private boolean marcado;
   private Equipe visitante;
   private Equipe visitado;
-  private int pontoVisitante = 0;
-  private int pontoVisitada = 0;
+  private int pontoVisitante;
+  private int pontoVisitada;
+
 
   public Jogo(String data, String local, Arbitro arbitro, Equipe visitante, Equipe visitado) {
     this.data = data;
@@ -22,6 +22,7 @@ public class Jogo {
     this.visitante = visitante;
     this.visitado = visitado;
   }
+
 
   public void exibirEquipes(Equipe equipeVisitante, Equipe equipeVisitada){
     System.out.println("Equipe visitante  : " + equipeVisitante.getNome());

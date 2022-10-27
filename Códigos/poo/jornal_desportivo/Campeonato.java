@@ -1,4 +1,4 @@
-package classes;
+package poo.jornal_desportivo;
 
 import java.util.ArrayList;
 import java.util.Collections;

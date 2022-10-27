@@ -1,9 +1,10 @@
-package classes.Pessoas;
+package poo.jornal_desportivo.rodada;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import classes.TipoCampeonato;
+import poo.jornal_desportivo.pessoas.Tecnico;
+import poo.jornal_desportivo.TipoCampeonato;
+import poo.jornal_desportivo.pessoas.Jogador;
 
 public class Equipe {
 
@@ -13,53 +14,77 @@ public class Equipe {
   private int vitorias;
   private int derrotas;
   private Tecnico tecnico;
-  public List<Jogador> jogadores = new ArrayList<>();
+  private ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
 
-  public Equipe(String nome, int qtdPontos, int vitorias, int derrotas) {
+
+  public Equipe(String nome, TipoCampeonato divisao) {
     this.nome = nome;
-    this.qtdPontos = qtdPontos;
-    this.vitorias = vitorias;
-    this.derrotas = derrotas;
+    this.divisao = divisao;
+    this.qtdPontos = 15;
+    this.vitorias = 0;
+    this.derrotas = 0;
   }
+
+
   public String getNome() {
     return nome;
   }
+
   public void setNome(String nome) {
     this.nome = nome;
   }
+
   public TipoCampeonato getDivisao() {
     return divisao;
   }
+
   public void setDivisao(TipoCampeonato divisao) {
     this.divisao = divisao;
   }
+
   public int getQtdPontos() {
     return qtdPontos;
   }
+
   public void setQtdPontos(int qtdPontos) {
     this.qtdPontos = qtdPontos;
   }
+
   public int getVitorias() {
     return vitorias;
   }
+
   public void setVitorias(int vitorias) {
     this.vitorias = vitorias;
   }
+
   public int getDerrotas() {
     return derrotas;
   }
+
   public void setDerrotas(int derrotas) {
     this.derrotas = derrotas;
   }
+
   public Tecnico getTecnico() {
     return tecnico;
   }
+
   public void setTecnico(Tecnico tecnico) {
     this.tecnico = tecnico;
   }
 
-  public void adicionarTecnico(String nome){
-    Tecnico tec = new Tecnico(nome);
+  public ArrayList<Jogador> getJogadores() {
+    return jogadores;
+  }
+
+  public void setJogadores(ArrayList<Jogador> jogadores) {
+    this.jogadores = jogadores;
+  }
+
+
+  public void adicionarTecnico(String nome, String funcao){
+    Tecnico tec = new Tecnico(nome, funcao);
     System.out.println("Foi definido que " + tec.getNome() + " é o atual técnico da equipe " + this.nome);
   }
   
@@ -68,5 +93,4 @@ public class Equipe {
     jogadores.add(base);
     System.out.println("Jogador " + base.getNome() + " entrou pelo " + this.nome);
   }
-
 }

@@ -1,4 +1,4 @@
-package classes;
+package poo.jornal_desportivo;
 
 public enum TipoCampeonato {
 

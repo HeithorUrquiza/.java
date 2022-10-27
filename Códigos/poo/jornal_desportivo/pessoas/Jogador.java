@@ -1,17 +1,21 @@
-package classes.Pessoas;
+package poo.jornal_desportivo.pessoas;
 
 public class Jogador extends Pessoa {
+
   private String nacionalidade;
   private String posicao;
   private boolean titular;
-  private int qtdCartao = 0;
+  private int qtdCartao;
+
 
   public Jogador(String nome, String nacionalidade, String posicao, boolean titular) {
     super(nome);
     this.nacionalidade = nacionalidade;
     this.posicao = posicao;
     this.titular = titular;
+    this.qtdCartao = 0;
   }
+
 
   public String getNacionalidade() {
     return nacionalidade;
@@ -29,7 +33,7 @@ public class Jogador extends Pessoa {
     this.posicao = posicao;
   }
 
-  public boolean isTitular() {
+  public boolean getTitular() {
     return titular;
   }
 
@@ -44,6 +48,4 @@ public class Jogador extends Pessoa {
   public void setQtdCartao(int qtdCartao) {
     this.qtdCartao = qtdCartao;
   }
-
-  
 }

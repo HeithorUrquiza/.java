@@ -1,4 +1,4 @@
-package classes.Rodada;
+package poo.jornal_desportivo.rodada;
 
 import classes.Jogo.Jogo;
 import classes.Pessoas.Arbitro;

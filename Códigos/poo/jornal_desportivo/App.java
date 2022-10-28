@@ -1,7 +1,6 @@
 package poo.jornal_desportivo;
 
 import java.util.ArrayList;
-
 import poo.jornal_desportivo.pessoas.Arbitro;
 import poo.jornal_desportivo.pessoas.Jogador;
 import poo.jornal_desportivo.pessoas.Tecnico;
@@ -75,23 +74,38 @@ public class App {
 
         // -----------------------------------------------------------------------------
         // Jogos
-        ArrayList<Jogo> jogos1 = new ArrayList<Jogo>();
-        jogos1.add(new Jogo("20/06/2023", "18:00", "Serrinha", arbitros.get(0), equipes.get(0), equipes.get(1)));
-        jogos1.add(new Jogo("22/06/2023", "18:00", "Serrinha", arbitros.get(1), equipes.get(1), equipes.get(0)));
-        jogos1.add(new Jogo("25/06/2023", "18:00", "Serrinha", arbitros.get(3), equipes.get(2), equipes.get(3)));
-        jogos1.add(new Jogo("26/06/2023", "18:00", "Serrinha", arbitros.get(1), equipes.get(3), equipes.get(2)));
+        ArrayList<Jogo> jogos1_1 = new ArrayList<Jogo>();
+        jogos1_1.add(new Jogo("20/06/2023", "18:00", "Serrinha", arbitros.get(0), equipes.get(0), equipes.get(1)));
+        jogos1_1.add(new Jogo("22/06/2023", "18:00", "Serrinha", arbitros.get(1), equipes.get(1), equipes.get(0)));
+
+        ArrayList<Jogo> jogos1_2 = new ArrayList<Jogo>();
+        jogos1_2.add(new Jogo("30/06/2023", "18:00", "Serrinha", arbitros.get(3), equipes.get(1), equipes.get(0)));
+        jogos1_2.add(new Jogo("31/06/2023", "18:00", "Serrinha", arbitros.get(2), equipes.get(0), equipes.get(1)));
         
-        ArrayList<Jogo> jogos2 = new ArrayList<Jogo>();
-        jogos2.add(new Jogo("30/06/2023", "18:00", "Serrinha", arbitros.get(3), equipes.get(1), equipes.get(0)));
-        jogos2.add(new Jogo("31/06/2023", "18:00", "Serrinha", arbitros.get(2), equipes.get(0), equipes.get(1)));
-        jogos2.add(new Jogo("02/07/2023", "18:00", "Serrinha", arbitros.get(0), equipes.get(3), equipes.get(2)));
-        jogos2.add(new Jogo("03/07/2023", "18:00", "Serrinha", arbitros.get(2), equipes.get(2), equipes.get(3)));
+        
+        ArrayList<Jogo> jogos2_1 = new ArrayList<Jogo>();
+        jogos2_1.add(new Jogo("02/07/2023", "18:00", "Serrinha", arbitros.get(0), equipes.get(3), equipes.get(2)));
+        jogos2_1.add(new Jogo("03/07/2023", "18:00", "Serrinha", arbitros.get(2), equipes.get(2), equipes.get(3)));
 
-        ArrayList<Rodada> rodadas = new ArrayList<Rodada>();
-        rodadas.add(new Rodada(1, 2023, jogos1));
-        rodadas.add(new Rodada(2, 2023, jogos2));
+        ArrayList<Jogo> jogos2_2 = new ArrayList<Jogo>();
+        jogos2_2.add(new Jogo("25/06/2023", "18:00", "Serrinha", arbitros.get(3), equipes.get(2), equipes.get(3)));
+        jogos2_2.add(new Jogo("26/06/2023", "18:00", "Serrinha", arbitros.get(1), equipes.get(3), equipes.get(2)));
 
+        // -----------------------------------------------------------------------------
+        // Rodadas
+        ArrayList<Rodada> rodadasPD = new ArrayList<Rodada>();
+        rodadasPD.add(new Rodada(1, 2023, jogos1_1));
+        rodadasPD.add(new Rodada(2, 2023, jogos1_2));
+
+        ArrayList<Rodada> rodadasSD = new ArrayList<Rodada>();
+        rodadasSD.add(new Rodada(1, 2023, jogos2_1));
+        rodadasSD.add(new Rodada(2, 2023, jogos2_2));
+
+        // -----------------------------------------------------------------------------
+        // Campeonatos
         ArrayList<Campeonato> campeonatos = new ArrayList<>();
+        campeonatos.add(new Campeonato(1, 2023, "Copinha IFG", Tipo.PRIMEIRA_DIVISAO.getTipo(), rodadasPD));
+        campeonatos.add(new Campeonato(2, 2023, "Copinha Sub-IFG", Tipo.SEGUNDA_DIVISAO.getTipo(), rodadasSD));
 
     }
 }

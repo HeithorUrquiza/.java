@@ -6,7 +6,7 @@ import poo.jornal_desportivo.pessoas.Tecnico;
 import poo.jornal_desportivo.Tipo;
 import poo.jornal_desportivo.pessoas.Jogador;
 
-public class Equipe {
+public class Equipe implements Comparable<Equipe>{
 
   private String nome;
   private String divisao;
@@ -106,8 +106,22 @@ public class Equipe {
   }
 
   @Override
+  public int compareTo(Equipe outraEquipe) {
+    if (this.qtdPontos > outraEquipe.getQtdPontos()) {
+      return -1;
+    }
+    if (this.qtdPontos < outraEquipe.getQtdPontos()) {
+      return 1;
+    }
+    return 0;
+  }
+
+  @Override
   public String toString() {
       return nome + "\nDivisao: " + divisao + "\nPontos: " + qtdPontos + "\nVitorias:" + vitorias
               + " | Derrotas: " + derrotas + "\nTécnico: " + tecnico.getNome() + "\nEscalação:" + jogadores;
   }
+
+
+  
 }

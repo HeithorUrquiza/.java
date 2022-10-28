@@ -5,7 +5,7 @@ public class Tecnico extends Pessoa{
   private String funcao;
 
 
-  public Tecnico(String nome, String funcao) {
+  public Tecnico(String nome, String funcao ) {
     super(nome);
     this.funcao = funcao;
   }

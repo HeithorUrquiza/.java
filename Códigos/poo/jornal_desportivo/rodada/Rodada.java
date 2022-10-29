@@ -51,6 +51,6 @@ public class Rodada {
 
   @Override
   public String toString() {
-    return "\nRodada ID: " +numRodada+ " | Ano: " +anoRodada+ "\nJogos: " +jogos;
+    return "\nRodada ID: " +numRodada+ " | Ano: " +anoRodada+ "\nJogos: " +jogos+ "\n";
   }
 }

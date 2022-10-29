@@ -81,29 +81,24 @@ public class Campeonato implements Interface{
 
   @Override
   public String consultarEquipe(ArrayList<Equipe> equipes, String nomeEquipe){
-    String text = null;
     Map<String, Equipe> consult = new HashMap<String, Equipe>();
     for (Equipe equipe : equipes) {
       if(this.tipoC.equals(equipe.getDivisao())){
         consult.put(equipe.getNome(), equipe);
       }
     }
-    text = consult.get(nomeEquipe).status();
-
-    return text;
+    return consult.get(nomeEquipe).status();
   }
 
   @Override
   public String consultarCamp(ArrayList<Campeonato> campeonatos, int idCamp) {
-    String text = null;
+    int i = 1;
+    Map<Integer, Campeonato> consult = new HashMap<>();
     for (Campeonato camps : campeonatos) {
-        if (this.idCamp == idCamp) {
-          text = camps.toString(); 
-        } else {
-          text = "Campeonato não encontrado";
-        }
+      consult.put(i, camps);
+      i++;  
     }
-    return text;
+    return consult.get(idCamp).toString();
   }
 
   @Override
@@ -113,6 +108,6 @@ public class Campeonato implements Interface{
 
   @Override
   public String toString() {
-    return "ID: " +idCamp+ " | Campeonato " +nomeCamp+ "\nAno: " +anoCamp+ "\nTipo: " +tipoC+ "\nRodadas: " +rodadas;
+    return "\nID: " +idCamp+ " | Campeonato " +nomeCamp+ "\nAno: " +anoCamp+ "\nTipo: " +tipoC+ "\nRodadas: " +rodadas;
   }
 }

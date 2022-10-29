@@ -112,5 +112,6 @@ public class App {
         equipes.get(2).setQtdPontos(26);
         campeonatos.get(1).exibirClassif(equipes);
         System.out.println(campeonatos.get(1).consultarEquipe(equipes, "Pernetas CIA"));
+        System.out.println(campeonatos.get(0).consultarCamp(campeonatos, 1));
     }
 }

@@ -107,5 +107,10 @@ public class App {
         campeonatos.add(new Campeonato(1, 2023, "Copinha IFG", Tipo.PRIMEIRA_DIVISAO.getTipo(), rodadasPD));
         campeonatos.add(new Campeonato(2, 2023, "Copinha Sub-IFG", Tipo.SEGUNDA_DIVISAO.getTipo(), rodadasSD));
 
+
+        equipes.get(0).setQtdPontos(30);
+        equipes.get(2).setQtdPontos(26);
+        campeonatos.get(1).exibirClassif(equipes);
+        System.out.println(campeonatos.get(1).consultarEquipe(equipes, "Pernetas CIA"));
     }
 }

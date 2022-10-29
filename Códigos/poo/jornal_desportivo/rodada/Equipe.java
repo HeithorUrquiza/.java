@@ -1,7 +1,6 @@
 package poo.jornal_desportivo.rodada;
 
 import java.util.ArrayList;
-
 import poo.jornal_desportivo.pessoas.Tecnico;
 import poo.jornal_desportivo.Tipo;
 import poo.jornal_desportivo.pessoas.Jogador;
@@ -116,12 +115,13 @@ public class Equipe implements Comparable<Equipe>{
     return 0;
   }
 
-  @Override
-  public String toString() {
-      return nome + "\nDivisao: " + divisao + "\nPontos: " + qtdPontos + "\nVitorias:" + vitorias
-              + " | Derrotas: " + derrotas + "\nTécnico: " + tecnico.getNome() + "\nEscalação:" + jogadores;
+  public String status(){
+    return "\n---- STATUS ---- \n\n:: " +nome+ " :: \nDivisão: " +divisao+ " | Pontos: " +qtdPontos+ "\nVitórias: " +vitorias+ " | Derrotas: " +derrotas;
   }
 
-
-  
+  @Override
+  public String toString() {
+      return "\n" +nome + "\nDivisao: " + divisao + "\nPontos: " + qtdPontos + "\nVitorias:" + vitorias
+              + " | Derrotas: " + derrotas + "\nTécnico: " + tecnico.getNome() + "\nEscalação:" + jogadores;
+  }
 }

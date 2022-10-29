@@ -1,9 +1,11 @@
 package poo.jornal_desportivo;
 
 import java.util.ArrayList;
-//import java.util.Collections;
-
+import java.util.Collections;
+import poo.jornal_desportivo.rodada.Equipe;
 import poo.jornal_desportivo.rodada.Rodada;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Campeonato implements Interface{
 
@@ -65,18 +67,30 @@ public class Campeonato implements Interface{
   
   // Métodos
   @Override
-  public void exibirClassif(){
-    /*List<String> classif = new ArrayList<>();
-    String temp = new String();
-    for(int i = 0; i < equipes.size(); i++){
-      temp = equipes.get(i).getQtdPontos() + " :: " + equipes.get(i).getNome();
-      classif.add(temp);
+  public void exibirClassif(ArrayList<Equipe> equipes){
+    int i = 1;
+    Collections.sort(equipes);
+    System.out.println("\n---- CLASSIFICAÇÃO ----\n");
+    for (Equipe equipe : equipes) {
+      if(this.tipoC.equals(equipe.getDivisao())){ // Exibe somente os times que se encaixam naquele tipo de campeonato
+        System.out.println(" " +i+ "°  " +equipe.getNome()+ " :: " +equipe.getQtdPontos());
+        i++;
+      }
     }
-    Collections.sort(classif, Collections.reverseOrder()); 
-    System.out.println("\n\nClassificação:\n");
-    for(int i = 0; i < classif.size(); i++){
-      System.out.println(classif.get(i));
-    }    */
+  }
+
+  @Override
+  public String consultarEquipe(ArrayList<Equipe> equipes, String nomeEquipe){
+    String text = null;
+    Map<String, Equipe> consult = new HashMap<String, Equipe>();
+    for (Equipe equipe : equipes) {
+      if(this.tipoC.equals(equipe.getDivisao())){
+        consult.put(equipe.getNome(), equipe);
+      }
+    }
+    text = consult.get(nomeEquipe).status();
+
+    return text;
   }
 
   @Override

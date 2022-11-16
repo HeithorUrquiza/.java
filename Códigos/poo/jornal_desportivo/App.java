@@ -113,5 +113,8 @@ public class App {
         campeonatos.get(1).exibirClassif(equipes);
         System.out.println(campeonatos.get(1).consultarEquipe(equipes, "Pernetas CIA"));
         System.out.println(campeonatos.get(0).consultarCamp(campeonatos, 1));
+
+        System.out.println(arbitros.get(0).aplicarPenalidade(jogadoresA.get(0)));
+        System.out.println(arbitros.get(0).aplicarPenalidade(jogadoresA.get(0)));
     }
 }

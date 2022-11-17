@@ -10,9 +10,9 @@ public class Passageiros extends Pessoa{
 
 
     //Construtor
-    public Passageiros(String name, String cpf, String birth, Assento seat, String tipe_service, boolean embarked) {
+    public Passageiros(String name, String cpf, String birth, String tipe_service, boolean embarked) {
         super(name, cpf, birth);
-        this.seat = seat;
+        this.seat = getSeat();
         this.tipe_service = tipe_service;
         this.embarked = embarked;
     }
@@ -44,5 +44,16 @@ public class Passageiros extends Pessoa{
     }
 
     
+    //Métodos
+    public void toReserveSeat(){
 
+    }
+
+    public void toEmbark(){
+        this.setEmbarked(true);
+    }
+
+    public String pray(){
+        return "";
+    }
 }

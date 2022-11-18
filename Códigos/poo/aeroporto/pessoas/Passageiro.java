@@ -56,4 +56,9 @@ public class Passageiro extends Pessoa{
     public String pray(){
         return "";
     }
+
+    @Override
+    public String toString() {
+        return "Passageiro [seat=" + seat + ", tipe_service=" + tipe_service + ", embarked=" + embarked + "]";
+    } 
 }

@@ -1,6 +1,6 @@
 package poo.aeroporto.pessoas;
 
-public class Pessoa {
+public abstract class Pessoa {
     
     private String name;
     private String cpf;

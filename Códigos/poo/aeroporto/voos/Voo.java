@@ -19,6 +19,7 @@ public class Voo implements Interface_voo{
     private String departure_hour;
     private String arrival_hour;
     private String date;
+    private boolean flight_permit;
 
     
     //Construtor
@@ -36,6 +37,7 @@ public class Voo implements Interface_voo{
         this.departure_hour = departure_hour;
         this.arrival_hour = arrival_hour;
         this.date = date;
+        this.flight_permit = false;
     }
 
 
@@ -128,6 +130,14 @@ public class Voo implements Interface_voo{
         this.date = date;
     }
 
+    public boolean getFlight_permit() {
+        return flight_permit;
+    }
+
+    public void setFlight_permit(boolean flight_permit) {
+        this.flight_permit = flight_permit;
+    }
+
 
     //Métodos
     @Override
@@ -153,4 +163,7 @@ public class Voo implements Interface_voo{
         // TODO Auto-generated method stub
         return null;
     }
+
+
+    
 }

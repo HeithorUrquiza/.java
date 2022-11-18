@@ -1,8 +1,8 @@
 package poo.aeroporto.pessoas;
 
-import poo.aeroporto.voos.Assento;
+import poo.aeroporto.aeronave.Assento;
 
-public class Passageiros extends Pessoa{
+public class Passageiro extends Pessoa{
     
     private Assento seat;
     private String tipe_service;
@@ -10,7 +10,7 @@ public class Passageiros extends Pessoa{
 
 
     //Construtor
-    public Passageiros(String name, String cpf, String birth, String tipe_service, boolean embarked) {
+    public Passageiro(String name, String cpf, String birth, String tipe_service, boolean embarked) {
         super(name, cpf, birth);
         this.seat = getSeat();
         this.tipe_service = tipe_service;

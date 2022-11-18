@@ -1,4 +1,4 @@
-package poo.aeroporto.voos;
+package poo.aeroporto.aeronave;
 
 public class Assento {
     

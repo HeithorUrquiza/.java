@@ -1,0 +1,156 @@
+package poo.aeroporto.voos;
+
+import java.util.ArrayList;
+import poo.aeroporto.pessoas.Passageiro;
+import poo.aeroporto.aeronave.Aeronave;
+import poo.aeroporto.pessoas.Aeromoca;
+import poo.aeroporto.pessoas.Piloto;
+
+public class Voo implements Interface_voo{
+
+    private int id;
+    private Piloto pilot;
+    private Piloto co_pilot;
+    private Aeromoca steward;
+    private ArrayList<Passageiro> passengers;
+    private Aeronave aircraf;
+    private String departure_local;
+    private String arrival_local;
+    private String departure_hour;
+    private String arrival_hour;
+    private String date;
+
+    
+    //Construtor
+    public Voo(int id, Piloto pilot, Piloto co_pilot, Aeromoca steward, ArrayList<Passageiro> passengers,
+            Aeronave aircraf, String departure_local, String arrival_local, String departure_hour, String arrival_hour,
+            String date) {
+        this.id = id;
+        this.pilot = pilot;
+        this.co_pilot = co_pilot;
+        this.steward = steward;
+        this.passengers = passengers;
+        this.aircraf = aircraf;
+        this.departure_local = departure_local;
+        this.arrival_local = arrival_local;
+        this.departure_hour = departure_hour;
+        this.arrival_hour = arrival_hour;
+        this.date = date;
+    }
+
+
+    //Get e Set
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Piloto getPilot() {
+        return pilot;
+    }
+
+    public void setPilot(Piloto pilot) {
+        this.pilot = pilot;
+    }
+
+    public Piloto getCo_pilot() {
+        return co_pilot;
+    }
+
+    public void setCo_pilot(Piloto co_pilot) {
+        this.co_pilot = co_pilot;
+    }
+
+    public Aeromoca getSteward() {
+        return steward;
+    }
+
+    public void setSteward(Aeromoca steward) {
+        this.steward = steward;
+    }
+
+    public ArrayList<Passageiro> getPassengers() {
+        return passengers;
+    }
+
+    public void setPassengers(ArrayList<Passageiro> passengers) {
+        this.passengers = passengers;
+    }
+
+    public Aeronave getAircraf() {
+        return aircraf;
+    }
+
+    public void setAircraf(Aeronave aircraf) {
+        this.aircraf = aircraf;
+    }
+
+    public String getDeparture_local() {
+        return departure_local;
+    }
+
+    public void setDeparture_local(String departure_local) {
+        this.departure_local = departure_local;
+    }
+
+    public String getArrival_local() {
+        return arrival_local;
+    }
+
+    public void setArrival_local(String arrival_local) {
+        this.arrival_local = arrival_local;
+    }
+
+    public String getDeparture_hour() {
+        return departure_hour;
+    }
+
+    public void setDeparture_hour(String departure_hour) {
+        this.departure_hour = departure_hour;
+    }
+
+    public String getArrival_hour() {
+        return arrival_hour;
+    }
+
+    public void setArrival_hour(String arrival_hour) {
+        this.arrival_hour = arrival_hour;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+
+    //Métodos
+    @Override
+    public String cancelFlight() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public String confirmFlight() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public String consultFlight() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public String flightHistory() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+}

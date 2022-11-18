@@ -1,8 +1,10 @@
 package poo.aeroporto.pessoas;
 
-import poo.aeroporto.voos.Assento;
+import java.util.ArrayList;
 
-public class Passageiros extends Pessoa{
+import poo.aeroporto.aeronave.Assento;
+
+public class Passageiro extends Pessoa{
     
     private Assento seat;
     private String tipe_service;
@@ -10,11 +12,11 @@ public class Passageiros extends Pessoa{
 
 
     //Construtor
-    public Passageiros(String name, String cpf, String birth, String tipe_service, boolean embarked) {
+    public Passageiro(String name, String cpf, String birth, String tipe_service) {
         super(name, cpf, birth);
-        this.seat = getSeat();
+        this.seat = null;
         this.tipe_service = tipe_service;
-        this.embarked = embarked;
+        this.embarked = false;
     }
 
 
@@ -45,8 +47,16 @@ public class Passageiros extends Pessoa{
 
     
     //Métodos
-    public void toReserveSeat(){
-
+    public void toReserveSeat(String idSeat, ArrayList<Assento> seats){
+        int i = 0;
+        int num = seats.size();
+        while (num != 0) {
+            if (idSeat.equals(seats.get(i).getId()) && seats.get(i).getOccupied() == false){
+                seats.get(i).setOccupied(true);
+                this.setSeat(seats.get(i));
+            }
+            num -= 1;
+        }
     }
 
     public void toEmbark(){
@@ -56,4 +66,9 @@ public class Passageiros extends Pessoa{
     public String pray(){
         return "";
     }
+
+    @Override
+    public String toString() {
+        return "Nome: " +this.getName()+ " | CPF: " +this.getCpf()+ " | Nascimento: " +this.getBirth()+ " | Classe: " +this.getTipe_service();
+    } 
 }

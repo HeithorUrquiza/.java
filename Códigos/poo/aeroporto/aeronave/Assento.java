@@ -1,4 +1,4 @@
-package poo.aeroporto.voos;
+package poo.aeroporto.aeronave;
 
 public class Assento {
     
@@ -20,7 +20,7 @@ public class Assento {
         this.id = id;
     }
 
-    public boolean isOccupied() {
+    public boolean getOccupied() {
         return occupied;
     }
 

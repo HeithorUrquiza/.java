@@ -1,4 +1,4 @@
-package poo.aeroporto.voos;
+package poo.aeroporto.aeronave;
 
 import java.util.ArrayList;
 

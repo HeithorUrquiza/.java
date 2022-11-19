@@ -82,8 +82,6 @@ public class Piloto extends Pessoa{
 
     @Override
     public String toString() {
-        return "\nID: " +getId()+ " | Nome: " +getName()+ " | Cargo: " +getOffice()+ " | Co-piloto: " +getCo_pilot()+ " | Horas de voo: " +flight_hours+ "\nAeronaves";
-        //return "Piloto [id=" + id + ", office=" + office + ", co_pilot=" + co_pilot + ", flight_hours=" + flight_hours
-        //        + ", aircrafts=" + aircrafts + "]";
+        return "\nID: " +getId()+ " | Nome: " +getName()+ " | Cargo: " +getOffice()+ " | Co-piloto: " +getCo_pilot()+ " | Horas de voo: " +flight_hours+ "\nAeronaves: " +getAircrafts();
     }
 }

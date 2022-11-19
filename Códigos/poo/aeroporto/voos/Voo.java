@@ -141,21 +141,18 @@ public class Voo implements Interface_voo{
 
     //Métodos
     @Override
-    public String cancelFlight() {
-        // TODO Auto-generated method stub
-        return null;
+    public void cancelFlight() {
+        this.setFlight_permit(false);
     }
 
     @Override
-    public String confirmFlight() {
-        // TODO Auto-generated method stub
-        return null;
+    public void confirmFlight() {
+        this.setFlight_permit(true);
     }
 
     @Override
     public String consultFlight() {
-        // TODO Auto-generated method stub
-        return null;
+        return "ID: " +getId()+ " | Local-Partida: " +getDeparture_local()+ " | Local-Chegada: " +getArrival_local()+ "";
     }
 
     @Override
@@ -165,5 +162,13 @@ public class Voo implements Interface_voo{
     }
 
 
+    @Override
+    public String toString() {
+        return "\nID: " +getId()+ " | ";
+        /*return "Voo [id=" + id + ", pilot=" + pilot + ", co_pilot=" + co_pilot + ", steward=" + steward
+                + ", passengers=" + passengers + ", aircraf=" + aircraf + ", departure_local=" + departure_local
+                + ", arrival_local=" + arrival_local + ", departure_hour=" + departure_hour + ", arrival_hour="
+                + arrival_hour + ", date=" + date + ", flight_permit=" + flight_permit + "]";*/
+    }
     
 }

@@ -4,7 +4,7 @@ public interface Interface_voo {
     
     public abstract String consultFlight();
     public abstract String flightHistory();
-    public abstract String confirmFlight();
-    public abstract String cancelFlight();
+    public abstract void confirmFlight();
+    public abstract void cancelFlight();
 
 }

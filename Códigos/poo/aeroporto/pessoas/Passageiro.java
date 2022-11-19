@@ -49,11 +49,13 @@ public class Passageiro extends Pessoa{
     //Métodos
     public void toReserveSeat(String idSeat, ArrayList<Assento> seats){
         int i = 0;
-        int num = seats.size();
+        int num = seats.size() - 1;
         while (num != 0) {
             if (idSeat.equals(seats.get(i).getId()) && seats.get(i).getOccupied() == false){
                 seats.get(i).setOccupied(true);
                 this.setSeat(seats.get(i));
+            } else {
+                System.out.println("\nAssento ocupado");
             }
             num -= 1;
         }
@@ -64,7 +66,7 @@ public class Passageiro extends Pessoa{
     }
 
     public String pray(){
-        return "";
+        return "\nPai nosso........";
     }
 
     @Override

@@ -34,17 +34,15 @@ public class Aeromoca extends Pessoa{
 
     //Métodos
     public String serveSnack(){
-        return "";
+        return "\n*{Servindo lanche para os passageiros}*";
     }    
 
     public String giveInstructions(){
-        return "";
+        return "\n*{Repassando intruções de segurança}*";
     }
 
     @Override
     public String toString() {
-        return "Aeromoca [id=" + id + ", office=" + office + "]";
-    }
-
-    
+        return "ID: " +getId()+ "| Nome: " +getName()+ " | Cargo: " +getOffice()+ " | ";
+    } 
 }

@@ -16,7 +16,7 @@ public class Piloto extends Pessoa{
                   ArrayList<String> aircrafts) {
         super(name, cpf, birth);
         this.id = id;
-        this.office = "Pilot";
+        this.office = "Piloto";
         this.co_pilot = co_pilot;
         this.flight_hours = flight_hours;
         this.aircrafts = aircrafts;
@@ -67,16 +67,21 @@ public class Piloto extends Pessoa{
 
     //Métodos
     public String warnPassengers(){
-        return "!";
+        return "\nPiloto: -Atenção senhores passageiros, preparar para o voo";
     }
 
-    public String prepareAircraft(){
-        return "";
+    public String prepareAircraft(boolean operant){
+        String msg = null;
+        if (operant){
+            msg = "\n*{Checando turbinas e painel de comando. Tirando aeronave do pátio e aguardando permissão de voo}*";
+        } else {
+            msg = "*{Aeronave com falhas. Enviando requisição de cancelamento de voo}*";
+        }
+        return msg;
     }
 
     @Override
     public String toString() {
-        return "Piloto [id=" + id + ", office=" + office + ", co_pilot=" + co_pilot + ", flight_hours=" + flight_hours
-                + ", aircrafts=" + aircrafts + "]";
+        return "\nID: " +getId()+ " | Nome: " +getName()+ " | Cargo: " +getOffice()+ " | Co-piloto: " +getCo_pilot()+ " | Horas de voo: " +flight_hours+ "\nAeronaves: " +getAircrafts();
     }
 }

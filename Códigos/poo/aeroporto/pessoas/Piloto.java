@@ -75,7 +75,7 @@ public class Piloto extends Pessoa{
         if (operant){
             msg = "\n*{Checando turbinas e painel de comando. Tirando aeronave do pátio e aguardando permissão de voo}*";
         } else {
-            msg = "*{Aeronave com falhas. Enviando requisição de cancelamento de voo}*";
+            msg = "\n*{Aeronave com falhas. Enviando requisição de cancelamento de voo}*";
         }
         return msg;
     }

@@ -2,8 +2,6 @@ package poo.aeroporto.aeronave;
 
 import java.util.ArrayList;
 
-import poo.aeroporto.pessoas.Piloto;
-
 public class Aeronave {
     
     private int id;
@@ -88,15 +86,11 @@ public class Aeronave {
 
     //Métodos
 
-    public void checkPilotPermission(Piloto pilot, Piloto co_pilot){
-        boolean ok = false;
-        while(ok != true){
-            int i = 0;
-            if (this.getModel().equals(pilot.getAircrafts().get(i)) && this.getModel().equals(co_pilot.getAircrafts().get(i))){
-                ok = true;
+    public void checkPilotPermission(ArrayList<String> pilot_aircrafts){
+        for (String aircraft: pilot_aircrafts){
+            if (this.getModel().equals(aircraft)){
                 this.setOperant(true);
             }
-            i++;
         }
     }
 
@@ -104,13 +98,15 @@ public class Aeronave {
         String msg = null;
         if(operant){
             msg = "\n*{Iniciando decolangem. Aeronave saindo do aeroporto}*";
+        } else {
+            msg = "\n*{Falha na decolagem}*";
         }
         return msg;
     }
 
     public String land(){
         this.setOperant(false);
-        return "\n*{Aeronave pousando no aeroporto e seguiindo para zona de desembarque}*";
+        return "\n*{Aeronave pousando no aeroporto e seguindo para zona de desembarque}*";
     }
 
     @Override

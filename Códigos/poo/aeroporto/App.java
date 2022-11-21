@@ -63,6 +63,13 @@ public class App {
         flights.add(new Voo(1, pilots.get(0), pilots.get(1), steward.get(0), passengers1, aircraf.get(0), "Goiânia", "Recife", "18:00", "22:30", "14/12/2022"));
 
 
+        //System.out.println(pilots.get(0).prepareAircraft(true)); pilot check
+        //System.out.println(passengers1.get(0).pray()); passenger check
+        //System.out.println(steward.get(0).toString()); steward check
         
+        
+        System.out.println(aircraf.get(0).toString());
+
+
     }
 }

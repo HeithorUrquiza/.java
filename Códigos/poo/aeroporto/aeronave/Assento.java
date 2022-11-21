@@ -28,4 +28,8 @@ public class Assento {
         this.occupied = occupied;
     }
 
+    @Override
+    public String toString() {
+        return "Assento [id=" + id + ", occupied=" + occupied + "]";
+    }
 }

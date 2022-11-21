@@ -43,6 +43,6 @@ public class Aeromoca extends Pessoa{
 
     @Override
     public String toString() {
-        return "ID: " +getId()+ "| Nome: " +getName()+ " | Cargo: " +getOffice()+ " | ";
+        return "ID: " +getId()+ "| Nome: " +getName()+ " | Cargo: " +getOffice();
     } 
 }

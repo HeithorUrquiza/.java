@@ -1,5 +1,6 @@
 package poo.aeroporto.aeronave;
 
+import java.security.spec.MGF1ParameterSpec;
 import java.util.ArrayList;
 
 public class Aeronave {
@@ -81,5 +82,26 @@ public class Aeronave {
 
     public void setCompany(String company) {
         this.company = company;
+    }
+
+
+    //Métodos
+    public String takeOff(){
+        String msg = null;
+        if(operant){
+            msg = "\n*{Iniciando decolangem. Aeronave saindo do aeroporto}*";
+        }
+        return msg;
+    }
+
+    public String land(){
+        this.setOperant(false);
+        return "\n*{Aeronave pousando no aeroporto e seguiindo para zona de desembarque}*";
+    }
+
+    @Override
+    public String toString() {
+        return "\nAeronave [id=" + id + ", model=" + model + ", air_sort=" + air_sort + ", seats=" + seats
+                + ", num_seats=" + num_seats + ", operant=" + operant + ", company=" + company + "]";
     }  
 }

@@ -162,21 +162,17 @@ public class Voo implements Interface_voo{
         }
         if (id == consult.get(id).id){
             msg = "\nID: " +getId()+ " | Data: " +getDate()+ " | Local-Partida: " +getDeparture_local()+ " | Local-Chegada: " +getArrival_local()+ "\nHorário-Partida: " +getDeparture_hour()+ " | Horário-Chegada: " +getArrival_hour()+ " | Voo Confirmado: " +getFlight_permit();
-        } else {
-            msg = "\nVoo não cadastrado no sistema";
         }
         return msg;
     }
 
     @Override
-    public String flightHistory(String date, ArrayList<Voo> flights) {
-        Map<String, Voo> consult = new HashMap<String, Voo>();
+    public void flightHistory(String date, ArrayList<Voo> flights) {
         for (Voo flight: flights){
-            if(date.equals(flights.get(id).getDate())){
-                consult.put(flights.get(id).getDate(), flight);
+            if(this.getDate().equals(flight.getDate())){
+                System.out.println(flight.toString());
             }
         }
-        return consult.get(date).toString();
     }
 
     @Override

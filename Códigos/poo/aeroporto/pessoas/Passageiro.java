@@ -1,6 +1,8 @@
 package poo.aeroporto.pessoas;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import poo.aeroporto.aeronave.Assento;
 
@@ -37,7 +39,7 @@ public class Passageiro extends Pessoa{
         this.tipe_service = tipe_service;
     }
 
-    public boolean isEmbarked() {
+    public boolean getEmbarked() {
         return embarked;
     }
 
@@ -48,17 +50,14 @@ public class Passageiro extends Pessoa{
     
     //Métodos
     public void toReserveSeat(String idSeat, ArrayList<Assento> seats){
-        int i = 0;
-        int num = 0;
-        while (num != seats.size()) {
-            if (idSeat.equals(seats.get(i).getId()) && seats.get(i).getOccupied() == false){
-                seats.get(i).setOccupied(true);
-                this.setSeat(seats.get(i));
-            } else {
-                System.out.println("\nAssento ocupado");
-            }
-            i++;
-            num -= 1;
+        Map<String, Assento> reserve = new HashMap<>();
+        for (Assento seat : seats) {
+            reserve.put(seat.getId(), seat);
+        }
+        if (reserve.get(idSeat).getOccupied()){
+            System.out.println("\nAssento ocupado");
+        } else {
+            reserve.get(idSeat).setOccupied(true);
         }
     }
 
@@ -72,6 +71,6 @@ public class Passageiro extends Pessoa{
 
     @Override
     public String toString() {
-        return "Nome: " +this.getName()+ " | CPF: " +this.getCpf()+ " | Nascimento: " +this.getBirth()+ " | Classe: " +this.getTipe_service();
+        return "Nome: " +this.getName()+ " | CPF: " +this.getCpf()+ " | Nascimento: " +this.getBirth()+ " | Classe: " +this.getTipe_service()+ " | Embarcado: " +getEmbarked();
     } 
 }

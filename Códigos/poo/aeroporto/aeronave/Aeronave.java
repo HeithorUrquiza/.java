@@ -1,6 +1,5 @@
 package poo.aeroporto.aeronave;
 
-import java.security.spec.MGF1ParameterSpec;
 import java.util.ArrayList;
 
 public class Aeronave {
@@ -15,14 +14,14 @@ public class Aeronave {
 
 
     //Construtor
-    public Aeronave(int id, String model, ArrayList<Assento> seats, int num_seats, boolean operant,
+    public Aeronave(int id, String model, ArrayList<Assento> seats, int num_seats,
             String company) {
         this.id = id;
         this.model = model;
         this.air_sort = "Avião";
         this.seats = seats;
         this.num_seats = num_seats;
-        this.operant = operant;
+        this.operant = false;
         this.company = company;
     }
 
@@ -86,17 +85,28 @@ public class Aeronave {
 
 
     //Métodos
+
+    public void checkPilotPermission(ArrayList<String> pilot_aircrafts){
+        for (String aircraft: pilot_aircrafts){
+            if (this.getModel().equals(aircraft)){
+                this.setOperant(true);
+            }
+        }
+    }
+
     public String takeOff(){
         String msg = null;
         if(operant){
             msg = "\n*{Iniciando decolangem. Aeronave saindo do aeroporto}*";
+        } else {
+            msg = "\n*{Falha na decolagem}*";
         }
         return msg;
     }
 
     public String land(){
         this.setOperant(false);
-        return "\n*{Aeronave pousando no aeroporto e seguiindo para zona de desembarque}*";
+        return "\n*{Aeronave pousando no aeroporto e seguindo para zona de desembarque}*";
     }
 
     @Override

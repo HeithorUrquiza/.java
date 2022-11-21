@@ -1,6 +1,9 @@
 package poo.aeroporto.voos;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 import poo.aeroporto.pessoas.Passageiro;
 import poo.aeroporto.aeronave.Aeronave;
 import poo.aeroporto.pessoas.Aeromoca;
@@ -151,24 +154,34 @@ public class Voo implements Interface_voo{
     }
 
     @Override
-    public String consultFlight() {
-        return "ID: " +getId()+ " | Local-Partida: " +getDeparture_local()+ " | Local-Chegada: " +getArrival_local()+ "";
+    public String consultFlight(int id, ArrayList<Voo> flights) {
+        String msg = null;
+        Map<Integer, Voo> consult = new HashMap<Integer, Voo>();
+        for(Voo flight: flights){
+            consult.put(flight.getId(), flight);
+        }
+        if (id == consult.get(id).id){
+            msg = "\nID: " +getId()+ " | Data: " +getDate()+ " | Local-Partida: " +getDeparture_local()+ " | Local-Chegada: " +getArrival_local()+ "\nHorário-Partida: " +getDeparture_hour()+ " | Horário-Chegada: " +getArrival_hour()+ " | Voo Confirmado: " +getFlight_permit();
+        } else {
+            msg = "\nVoo não cadastrado no sistema";
+        }
+        return msg;
     }
 
     @Override
-    public String flightHistory() {
-        // TODO Auto-generated method stub
-        return null;
+    public String flightHistory(String date, ArrayList<Voo> flights) {
+        Map<String, Voo> consult = new HashMap<String, Voo>();
+        for (Voo flight: flights){
+            if(date.equals(flights.get(id).getDate())){
+                consult.put(flights.get(id).getDate(), flight);
+            }
+        }
+        return consult.get(date).toString();
     }
-
 
     @Override
     public String toString() {
-        return "\nID: " +getId()+ " | ";
-        /*return "Voo [id=" + id + ", pilot=" + pilot + ", co_pilot=" + co_pilot + ", steward=" + steward
-                + ", passengers=" + passengers + ", aircraf=" + aircraf + ", departure_local=" + departure_local
-                + ", arrival_local=" + arrival_local + ", departure_hour=" + departure_hour + ", arrival_hour="
-                + arrival_hour + ", date=" + date + ", flight_permit=" + flight_permit + "]";*/
+        return "\nID: " +getId()+ " | Data: " +getDate()+ " | Local-Partida: " +getDeparture_local()+ " | Local-Chegada: " +getArrival_local()+ "\nPiloto: " +getPilot()+ " | Co-Piloto: " +getCo_pilot()+ " | Comissário(a): " +getSteward()+ " | Aeronave: " +getAircraf()+ "\nHorário-Partida: " +getDeparture_hour()+ " | Horário-Chegada: " +getArrival_hour()+ " | Voo Confirmado: " +getFlight_permit()+ "\nPassageiros: " +getPassengers();
     }
     
 }

@@ -114,26 +114,29 @@ public class Manipulator {
                     if (word.compareToIgnoreCase("os") == 0){
                         this.setArtOs(this.getArtOs() + 1);
                     }
-                    if (word.compareToIgnoreCase("os") == 0){
-                        this.setArtOs(this.getArtOs() + 1);
+                    if (word.compareToIgnoreCase("as") == 0){
+                        this.setArtAs(this.getArtAs() + 1);
                     }
-                    if (word.compareToIgnoreCase("os") == 0){
-                        this.setArtOs(this.getArtOs() + 1);
+                    if (word.compareToIgnoreCase("o") == 0){
+                        this.setArtO(this.getArtO() + 1);
                     }
-                    if (word.compareToIgnoreCase("os") == 0){
-                        this.setArtOs(this.getArtOs() + 1);
+                    if (word.compareToIgnoreCase("a") == 0){
+                        this.setArtA(this.getArtA() + 1);
                     }
-                    if (word.compareToIgnoreCase("os") == 0){
-                        this.setArtOs(this.getArtOs() + 1);
+                    if (word.compareToIgnoreCase("teu") == 0){
+                        this.setProTeu(this.getProTeu() + 1);
                     }
-                    if (word.compareToIgnoreCase("os") == 0){
-                        this.setArtOs(this.getArtOs() + 1);
+                    if (word.compareToIgnoreCase("teus") == 0){
+                        this.setProTeus(this.getProTeus() + 1);
                     }
-                    if (word.compareToIgnoreCase("os") == 0){
-                        this.setArtOs(this.getArtOs() + 1);
+                    if (word.compareToIgnoreCase("meus") == 0){
+                        this.setProMeus(this.getProMeus() + 1);
                     }
-                    if (word.compareToIgnoreCase("os") == 0){
-                        this.setArtOs(this.getArtOs() + 1);
+                    if (word.compareToIgnoreCase("nossas") == 0){
+                        this.setProNossas(this.getProNossas() + 1);
+                    }
+                    if (word.compareToIgnoreCase("tu") == 0){
+                        this.setProTu(this.getProTu() + 1);
                     }
                 }
             } else {
@@ -141,10 +144,12 @@ public class Manipulator {
             }
             line = br.readLine();
         }
-        System.out.println(this.getArtOs());
         br.close();
     }
 
 
-    
+    @Override
+    public String toString() {
+        return "Quantidade\nO: " + artO + "\nA: " + artA + "\nOs:" + artOs + "\nAs: " + artAs + "\nTeu: " + proTeu + "\nTeus: " + proTeus + "\nNossas: " + proNossas + "\nMeus: " + proMeus + "\nTu: "+ proTu;
+    }    
 }

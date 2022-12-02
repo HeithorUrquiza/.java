@@ -1,6 +1,7 @@
 package poo.prova_final_visio;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -105,46 +106,55 @@ public class Manipulator {
     
     // Função que lê o arquivo e conta as ocorrências
     public void reader(String path) throws IOException{
-        BufferedReader br = new BufferedReader(new FileReader(path));
-        String line = "";
-        while(true){
-            if (line != null){
-                String[] words = line.split("\s");
-                for (String word : words) {
-                    if (word.compareToIgnoreCase("os") == 0){
-                        this.setArtOs(this.getArtOs() + 1);
+        
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(path));
+            String line = "";
+            try {
+                while(true){
+                    if (line != null){
+                        String[] words = line.split("\s");
+                        for (String word : words) {
+                            if (word.compareToIgnoreCase("os") == 0){
+                                this.setArtOs(this.getArtOs() + 1);
+                            }
+                            if (word.compareToIgnoreCase("as") == 0){
+                                this.setArtAs(this.getArtAs() + 1);
+                            }
+                            if (word.compareToIgnoreCase("o") == 0){
+                                this.setArtO(this.getArtO() + 1);
+                            }
+                            if (word.compareToIgnoreCase("a") == 0){
+                                this.setArtA(this.getArtA() + 1);
+                            }
+                            if (word.compareToIgnoreCase("teu") == 0){
+                                this.setProTeu(this.getProTeu() + 1);
+                            }
+                            if (word.compareToIgnoreCase("teus") == 0){
+                                this.setProTeus(this.getProTeus() + 1);
+                            }
+                            if (word.compareToIgnoreCase("meus") == 0){
+                                this.setProMeus(this.getProMeus() + 1);
+                            }
+                            if (word.compareToIgnoreCase("nossas") == 0){
+                                this.setProNossas(this.getProNossas() + 1);
+                            }
+                            if (word.compareToIgnoreCase("tu") == 0){
+                                this.setProTu(this.getProTu() + 1);
+                            }
+                        }
+                    } else {
+                        break;
                     }
-                    if (word.compareToIgnoreCase("as") == 0){
-                        this.setArtAs(this.getArtAs() + 1);
-                    }
-                    if (word.compareToIgnoreCase("o") == 0){
-                        this.setArtO(this.getArtO() + 1);
-                    }
-                    if (word.compareToIgnoreCase("a") == 0){
-                        this.setArtA(this.getArtA() + 1);
-                    }
-                    if (word.compareToIgnoreCase("teu") == 0){
-                        this.setProTeu(this.getProTeu() + 1);
-                    }
-                    if (word.compareToIgnoreCase("teus") == 0){
-                        this.setProTeus(this.getProTeus() + 1);
-                    }
-                    if (word.compareToIgnoreCase("meus") == 0){
-                        this.setProMeus(this.getProMeus() + 1);
-                    }
-                    if (word.compareToIgnoreCase("nossas") == 0){
-                        this.setProNossas(this.getProNossas() + 1);
-                    }
-                    if (word.compareToIgnoreCase("tu") == 0){
-                        this.setProTu(this.getProTu() + 1);
-                    }
+                    line = br.readLine();
                 }
-            } else {
-                break;
+                br.close();
+            } catch (IOException ex) {
+                System.out.println("Erro: Não foi possível ler o arquivo!!");
             }
-            line = br.readLine();
+        } catch (FileNotFoundException ex) {
+        System.out.println("Erro: Arquivo não encontrado!!");
         }
-        br.close();
     }
 
 

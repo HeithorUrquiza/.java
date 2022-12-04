@@ -4,8 +4,13 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import javax.swing.JFrame;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.general.DefaultPieDataset;
 
-public class Manipulator {
+public class Manipulator extends JFrame{
 
     private int artO;
     private int artA;
@@ -19,6 +24,7 @@ public class Manipulator {
     
 
     public Manipulator() {
+        super("Gráfico do Poema Visio");
         this.artO = 0;
         this.artA = 0;
         this.artOs = 0;
@@ -157,9 +163,30 @@ public class Manipulator {
         }
     }
 
+    //Gera um gráfico Pizza modelo 3D
+    public void createPizzaGrafic(){
+        DefaultPieDataset pieDataset = new DefaultPieDataset(); //Similar ao HashMap consiste em uma relação chave-valor para o gráfico
+        pieDataset.setValue(" O ", this.getArtO());
+        pieDataset.setValue(" A ", this.getArtA());
+        pieDataset.setValue(" Os ", this.getArtOs());
+        pieDataset.setValue(" As ", this.getArtAs());
+        pieDataset.setValue(" Teu ", this.getProTeu());
+        pieDataset.setValue(" Teus ", this.getProTeus());
+        pieDataset.setValue(" Nossas ", this.getProNossas());
+        pieDataset.setValue(" Meus ", this.getProMeus());
+        pieDataset.setValue(" Tu ", this.getProTu());
+
+        JFreeChart grafic = ChartFactory.createPieChart3D("Quantidade de Artigos e Pronomes", pieDataset, true, true, true); //Cria o gráfico
+
+        this.add(new ChartPanel(grafic));
+
+        this.pack();
+        this.setVisible(true);
+    }
+
 
     @Override
     public String toString() {
-        return "Quantidade\nO: " + artO + "\nA: " + artA + "\nOs:" + artOs + "\nAs: " + artAs + "\nTeu: " + proTeu + "\nTeus: " + proTeus + "\nNossas: " + proNossas + "\nMeus: " + proMeus + "\nTu: "+ proTu;
+        return "Quantidade\nO: " + artO + "\nA: " + artA + "\nOs: " + artOs + "\nAs: " + artAs + "\nTeu: " + proTeu + "\nTeus: " + proTeus + "\nNossas: " + proNossas + "\nMeus: " + proMeus + "\nTu: "+ proTu;
     }    
 }

@@ -3,7 +3,9 @@
         "include": [
             "lib/**/*.jar",
             "c:\\Users\\heith\\OneDrive\\Documentos\\Arquivos executaveis etc\\jfreechart-1.0.19\\lib\\jcommon-1.0.23.jar",
-            "c:\\Users\\heith\\OneDrive\\Documentos\\Arquivos executaveis etc\\jfreechart-1.0.19\\lib\\jfreechart-1.0.19.jar"
+            "c:\\Users\\heith\\OneDrive\\Documentos\\Arquivos executaveis etc\\jfreechart-1.0.19\\lib\\jfreechart-1.0.19.jar",
+            "c:\\Users\\heith\\OneDrive\\Documentos\\Arquivos executáveis\\jcommon-1.0.23.jar",
+            "c:\\Users\\heith\\OneDrive\\Documentos\\Arquivos executáveis\\jfreechart-1.0.19.jar"
         ],
         "exclude": [
             "c:\\Users\\heith\\OneDrive\\Documentos\\Arquivos executaveis etc\\jfreechart-1.0.19\\lib\\jcommon-1.0.23.jar"

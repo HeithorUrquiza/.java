@@ -187,6 +187,6 @@ public class Manipulator extends JFrame{
 
     @Override
     public String toString() {
-        return "Quantidade\nO: " + artO + "\nA: " + artA + "\nOs: " + artOs + "\nAs: " + artAs + "\nTeu: " + proTeu + "\nTeus: " + proTeus + "\nNossas: " + proNossas + "\nMeus: " + proMeus + "\nTu: "+ proTu;
+        return "\nRespectiva quantidade de Artigos e Pronomes no poema:\n\nO: " + artO + "\n-------\nA: " + artA + "\n-------\nOs: " + artOs + "\n-------\nAs: " + artAs + "\n-------\nTeu: " + proTeu + "\n-------\nTeus: " + proTeus + "\n-------\nNossas: " + proNossas + "\n-------\nMeus: " + proMeus + "\n-------\nTu: "+ proTu+ "\n";
     }    
 }

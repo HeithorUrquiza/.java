@@ -231,9 +231,8 @@ public class Manipulator extends JFrame{
 
     public void manipulate(String archive) throws IOException{
         this.reader(archive);
-        boolean function = true;
         try (Scanner sc = new Scanner(System.in)) {
-            while(function){
+            while(true){
                 System.out.print("\nEscolha uma ação: \n[1] Gerar gráfico do arquivo \n[2] Exibir conteúdo do arquivo \n[3] Pesquisar ocorrência(s) de uma palavra \n[0] Encerrar programa \n -->  ");
                 int answer = sc.nextInt();
 
@@ -252,8 +251,8 @@ public class Manipulator extends JFrame{
                         System.out.println("\nOcorrência(s) -> " + this.stringCounter(this.getSeach(), word));
                         break;
                     case 0:
-                        function = false;
-                        break;
+                        return;
+                        
                 }
 
                 System.out.println("\n-------------------------------------------------------");

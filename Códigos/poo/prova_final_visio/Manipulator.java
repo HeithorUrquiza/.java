@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
+
 import javax.swing.JFrame;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -132,7 +134,6 @@ public class Manipulator extends JFrame{
 
     // Função que lê o arquivo e conta as ocorrências
     public void reader(String path) throws IOException{
-        
         try {
             BufferedReader br = new BufferedReader(new FileReader(path));
             String line = "";
@@ -226,6 +227,40 @@ public class Manipulator extends JFrame{
     
         return occurences;
     }
+
+
+    public void manipulate(String archive) throws IOException{
+        this.reader(archive);
+        boolean function = true;
+        try (Scanner sc = new Scanner(System.in)) {
+            while(function){
+                System.out.print("\nEscolha uma ação: \n[1] Gerar gráfico do arquivo \n[2] Exibir conteúdo do arquivo \n[3] Pesquisar ocorrência(s) de uma palavra \n[0] Encerrar programa \n -->  ");
+                int answer = sc.nextInt();
+
+                switch (answer) {
+                    case 1:
+                        this.createPizzaGrafic();
+                        System.out.println(this.toString());
+                        break;            
+                    case 2:
+                        System.out.println(this.getSeach());
+                        break;
+                    case 3:
+                        Scanner sc2 = new Scanner(System.in);
+                        System.out.print("\nPalavra a ser pesquisada: ");
+                        String word = sc2.nextLine();
+                        System.out.println("\nOcorrência(s) -> " + this.stringCounter(this.getSeach(), word));
+                        break;
+                    case 0:
+                        function = false;
+                        break;
+                }
+
+                System.out.println("\n-------------------------------------------------------");
+            }
+        }        
+    }
+
 
     @Override
     public String toString() {

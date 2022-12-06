@@ -21,6 +21,8 @@ public class Manipulator extends JFrame{
     private int proNossas;
     private int proMeus;
     private int proTu;
+    private boolean read;
+    private String seach;
     
 
     public Manipulator() {
@@ -34,6 +36,8 @@ public class Manipulator extends JFrame{
         this.proNossas = 0;
         this.proMeus = 0;
         this.proTu = 0;
+        this.read = false;
+        this.seach = "";
     }
 
 
@@ -109,7 +113,23 @@ public class Manipulator extends JFrame{
         this.proTu = proTu;
     }
 
+    public boolean getRead() {
+        return read;
+    }
+
+    public void setRead(boolean read) {
+        this.read = read;
+    }
+
+    public String getSeach() {
+        return seach;
+    }
+
+    public void setSeach(String seach) {
+        this.seach += seach + "\n";
+    }
     
+
     // Função que lê o arquivo e conta as ocorrências
     public void reader(String path) throws IOException{
         
@@ -119,6 +139,7 @@ public class Manipulator extends JFrame{
             try {
                 while(true){
                     if (line != null){
+                        this.setSeach(line);
                         String[] words = line.split("\s");
                         for (String word : words) {
                             if (word.compareToIgnoreCase("os") == 0){
@@ -155,38 +176,63 @@ public class Manipulator extends JFrame{
                     line = br.readLine();
                 }
                 br.close();
+                this.setRead(true);
             } catch (IOException ex) {
-                System.out.println("Erro: Não foi possível ler o arquivo!!");
+                System.out.println("\nErro: Não foi possível ler o arquivo!!");
             }
         } catch (FileNotFoundException ex) {
-        System.out.println("Erro: Arquivo não encontrado!!");
+        System.out.println("\nErro: Arquivo não encontrado!!");
         }
     }
 
     //Gera um gráfico Pizza modelo 3D
     public void createPizzaGrafic(){
-        DefaultPieDataset pieDataset = new DefaultPieDataset(); //Similar ao HashMap consiste em uma relação chave-valor para o gráfico
-        pieDataset.setValue(" O ", this.getArtO());
-        pieDataset.setValue(" A ", this.getArtA());
-        pieDataset.setValue(" Os ", this.getArtOs());
-        pieDataset.setValue(" As ", this.getArtAs());
-        pieDataset.setValue(" Teu ", this.getProTeu());
-        pieDataset.setValue(" Teus ", this.getProTeus());
-        pieDataset.setValue(" Nossas ", this.getProNossas());
-        pieDataset.setValue(" Meus ", this.getProMeus());
-        pieDataset.setValue(" Tu ", this.getProTu());
+        if (this.getRead()){
+            DefaultPieDataset pieDataset = new DefaultPieDataset(); //Similar ao HashMap consiste em uma relação chave-valor para o gráfico
+            pieDataset.setValue(" O ", this.getArtO());
+            pieDataset.setValue(" A ", this.getArtA());
+            pieDataset.setValue(" Os ", this.getArtOs());
+            pieDataset.setValue(" As ", this.getArtAs());
+            pieDataset.setValue(" Teu ", this.getProTeu());
+            pieDataset.setValue(" Teus ", this.getProTeus());
+            pieDataset.setValue(" Nossas ", this.getProNossas());
+            pieDataset.setValue(" Meus ", this.getProMeus());
+            pieDataset.setValue(" Tu ", this.getProTu());
 
-        JFreeChart grafic = ChartFactory.createPieChart3D("Quantidade de Artigos e Pronomes", pieDataset, true, true, true); //Cria o gráfico
+            JFreeChart grafic = ChartFactory.createPieChart3D("Quantidade de Artigos e Pronomes", pieDataset, true, true, true); //Cria o gráfico
 
-        this.add(new ChartPanel(grafic));
+            this.add(new ChartPanel(grafic));
 
-        this.pack();
-        this.setVisible(true);
+            this.pack();
+            this.setVisible(true);
+        }
     }
 
+    //Realiza a pesquisa por ocorrência de uma string
+    public int stringCounter(String file, String word){
+        String fileL = file.toLowerCase();
+        String wordL = word.toLowerCase();
+        int occurences = 0;
+        String res = "";
+          for(int i = 0; i < file.length() - word.length(); i++){
+            for(int j = 0; j < word.length(); j++){
+              res += fileL.charAt(i + j);
+            }
+            if(res.equals(wordL)){
+              occurences += 1;
+            }
+            res = "";
+          }
+    
+        return occurences;
+    }
 
     @Override
     public String toString() {
-        return "\nRespectiva quantidade de Artigos e Pronomes no poema:\n\nO: " + artO + "\n-------\nA: " + artA + "\n-------\nOs: " + artOs + "\n-------\nAs: " + artAs + "\n-------\nTeu: " + proTeu + "\n-------\nTeus: " + proTeus + "\n-------\nNossas: " + proNossas + "\n-------\nMeus: " + proMeus + "\n-------\nTu: "+ proTu+ "\n";
-    }    
+        String msg = "";
+        if (this.getRead()) {
+            msg = "\nRespectiva quantidade de Artigos e Pronomes no poema:\n\nO: " + artO + "\n-------\nA: " + artA + "\n-------\nOs: " + artOs + "\n-------\nAs: " + artAs + "\n-------\nTeu: " + proTeu + "\n-------\nTeus: " + proTeus + "\n-------\nNossas: " + proNossas + "\n-------\nMeus: " + proMeus + "\n-------\nTu: "+ proTu+ "\n";
+        }
+        return msg;
+    }
 }

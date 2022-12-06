@@ -249,6 +249,7 @@ public class Manipulator extends JFrame{
                         System.out.print("\nPalavra a ser pesquisada: ");
                         String word = sc2.nextLine();
                         System.out.println("\nOcorrência(s) -> " + this.stringCounter(this.getSeach(), word));
+                        sc2.close();
                         break;
                     case 0:
                         return;

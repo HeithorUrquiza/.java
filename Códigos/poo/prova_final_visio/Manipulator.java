@@ -232,12 +232,12 @@ public class Manipulator extends JFrame{
         this.reader(archive);
         try (Scanner sc = new Scanner(System.in)) {
             while(true){
-                System.out.print("\nEscolha uma ação: \n[1] Gerar gráfico do arquivo \n[2] Exibir conteúdo do arquivo \n[3] Pesquisar ocorrência(s) de uma palavra \n[0] Encerrar programa \n -->  ");
+                System.out.print("\n *** ESCOLHA UMA AÇÃO *** \n\n[1] Gerar gráfico do arquivo \n[2] Exibir conteúdo do arquivo \n[3] Pesquisar ocorrência(s) de uma palavra \n[0] Encerrar programa \n -->  ");
                 int answer = sc.nextInt();
 
                 switch (answer) {
                     case 1:
-                        this.createPizzaGrafic();
+                        this.createPizzaGrafic(); 
                         System.out.println(this.toString());
                         break;            
                     case 2:
@@ -250,7 +250,7 @@ public class Manipulator extends JFrame{
                         System.out.println("\nOcorrência(s) -> " + this.stringCounter(this.getSeach(), word));
                         break;
                     case 0:
-                        return;
+                        System.exit(0); //Comando para encerrar a aplicação
                         
                 }
 

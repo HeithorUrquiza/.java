@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
-
 import javax.swing.JFrame;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -249,7 +248,6 @@ public class Manipulator extends JFrame{
                         System.out.print("\nPalavra a ser pesquisada: ");
                         String word = sc2.nextLine();
                         System.out.println("\nOcorrência(s) -> " + this.stringCounter(this.getSeach(), word));
-                        sc2.close();
                         break;
                     case 0:
                         return;

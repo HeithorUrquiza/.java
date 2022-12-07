@@ -184,6 +184,7 @@ public class Manipulator extends JFrame{
         System.out.println("\nErro: Arquivo não encontrado!!");
         }
     }
+    
 
     //Gera um gráfico Pizza modelo 3D
     public void createPizzaGrafic(){
@@ -199,7 +200,7 @@ public class Manipulator extends JFrame{
             pieDataset.setValue(" Meus ", this.getProMeus());
             pieDataset.setValue(" Tu ", this.getProTu());
 
-            JFreeChart grafic = ChartFactory.createPieChart3D("Quantidade de Artigos e Pronomes", pieDataset, true, true, true); //Cria o gráfico
+            JFreeChart grafic = ChartFactory.createPieChart3D("Quantidade de Artigos e Pronomes", pieDataset, true, true, false); //Cria o gráfico
 
             this.add(new ChartPanel(grafic));
 
@@ -207,6 +208,7 @@ public class Manipulator extends JFrame{
             this.setVisible(true);
         }
     }
+
 
     //Realiza a pesquisa por ocorrência de uma string
     public int stringCounter(String file, String word){
@@ -228,33 +230,36 @@ public class Manipulator extends JFrame{
     }
 
 
+    //Painel de interação
     public void manipulate(String archive) throws IOException{
         this.reader(archive);
-        try (Scanner sc = new Scanner(System.in)) {
-            while(true){
-                System.out.print("\n *** ESCOLHA UMA AÇÃO *** \n\n[1] Gerar gráfico do arquivo \n[2] Exibir conteúdo do arquivo \n[3] Pesquisar ocorrência(s) de uma palavra \n[0] Encerrar programa \n -->  ");
-                int answer = sc.nextInt();
-
-                switch (answer) {
-                    case 1:
-                        this.createPizzaGrafic(); 
-                        System.out.println(this.toString());
-                        break;            
-                    case 2:
-                        System.out.println(this.getSeach());
-                        break;
-                    case 3:
-                        Scanner sc2 = new Scanner(System.in);
-                        System.out.print("\nPalavra a ser pesquisada: ");
-                        String word = sc2.nextLine();
-                        System.out.println("\nOcorrência(s) -> " + this.stringCounter(this.getSeach(), word));
-                        break;
-                    case 0:
-                        System.exit(0); //Comando para encerrar a aplicação
-                        
+        if (this.getRead()) {
+            try (Scanner sc = new Scanner(System.in)) {
+                while(true){
+                    System.out.print("\n *** ESCOLHA UMA AÇÃO *** \n\n[1] Gerar gráfico do arquivo \n[2] Exibir conteúdo do arquivo \n[3] Pesquisar ocorrência(s) de uma palavra \n[0] Encerrar programa \n -->  ");
+                    int answer = sc.nextInt();
+    
+                    switch (answer) {
+                        case 1:
+                            this.createPizzaGrafic(); 
+                            System.out.println(this.toString());
+                            break;            
+                        case 2:
+                            System.out.println(this.getSeach());
+                            break;
+                        case 3:
+                            Scanner sc2 = new Scanner(System.in);
+                            System.out.print("\nPalavra a ser pesquisada: ");
+                            String word = sc2.nextLine();
+                            System.out.println("\nOcorrência(s) -> " + this.stringCounter(this.getSeach(), word));
+                            break;
+                        case 0:
+                            System.exit(0); //Comando para encerrar a aplicação
+                            
+                    }
+    
+                    System.out.println("\n-------------------------------------------------------");
                 }
-
-                System.out.println("\n-------------------------------------------------------");
             }
         }        
     }

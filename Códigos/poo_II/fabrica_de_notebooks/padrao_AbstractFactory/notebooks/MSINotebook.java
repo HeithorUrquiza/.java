@@ -8,7 +8,7 @@ public class MSINotebook implements Notebook{
     private String ram;
     private String placaDeVideo;
     private String teclado;
-    private String marca;
+    private String marca = "MSI";
     private String slotDisponivel;
     private String sistemaOperacional;
     private String cor;
@@ -56,9 +56,6 @@ public class MSINotebook implements Notebook{
     }
     public String getMarca() {
         return marca;
-    }
-    public void setMarca(String marca) {
-        this.marca = marca;
     }
     public String getSlotDisponivel() {
         return slotDisponivel;

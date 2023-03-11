@@ -1,22 +1,17 @@
 package poo_II.fabrica_de_notebooks.padrao_AbstractFactory;
 
-import java.nio.file.Path;
-import java.util.ArrayList;
-
 import poo_II.fabrica_de_notebooks.padrao_AbstractFactory.fabricas.FabricaNotebook;
 import poo_II.fabrica_de_notebooks.padrao_AbstractFactory.notebooks.Notebook;
 
 public class Aplicacao {
     
-    private ArrayList<Notebook> notebooks;
+    private Notebook notebook;
 
-    public Aplicacao(FabricaNotebook fabrica, String path, int qtd){
-        for(int i = 0; i < qtd; i++){
-            notebooks.add(fabrica.criarNotebook(path));
-        }
+    public Aplicacao(FabricaNotebook fabrica, String path){
+        notebook = fabrica.criarNotebook(path);
     }
 
-    public void print(){
-       System.out.println(notebooks);
+    public void paint(){
+       System.out.println(notebook.exibirNotebook());
     }
 }

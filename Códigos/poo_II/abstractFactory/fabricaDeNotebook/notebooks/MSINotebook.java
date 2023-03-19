@@ -1,21 +1,21 @@
-package poo_II.fabrica_de_notebooks.padrao_AbstractFactory.notebooks;
+package poo_II.abstractFactory.fabricaDeNotebook.notebooks;
 
-public class GigabyteNotebook implements Notebook{
-
+public class MSINotebook implements Notebook{
+    
     private String tela;
     private String processador;
     private String armazenamento;
     private String ram;
     private String placaDeVideo;
     private String teclado;
-    private String marca = "Gigabyte";
+    private String marca = "MSI";
     private String slotDisponivel;
     private String sistemaOperacional;
     private String cor;
     private String placaMae;
 
 
-    public GigabyteNotebook(){}
+    public MSINotebook(){}
 
 
     public String getTela() {

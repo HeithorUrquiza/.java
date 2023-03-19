@@ -1,7 +1,7 @@
-package poo_II.fabrica_de_notebooks.padrao_AbstractFactory;
+package poo_II.abstractFactory.fabricaDeNotebook;
 
-import poo_II.fabrica_de_notebooks.padrao_AbstractFactory.fabricas.FabricaNotebook;
-import poo_II.fabrica_de_notebooks.padrao_AbstractFactory.notebooks.Notebook;
+import poo_II.abstractFactory.fabricaDeNotebook.fabricas.FabricaNotebook;
+import poo_II.abstractFactory.fabricaDeNotebook.notebooks.Notebook;
 
 public class Aplicacao {
     

@@ -1,17 +1,17 @@
-package poo_II.fabrica_de_notebooks.padrao_AbstractFactory.fabricas;
+package poo_II.abstractFactory.fabricaDeNotebook.fabricas;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Random;
-import poo_II.fabrica_de_notebooks.padrao_AbstractFactory.notebooks.AsusNotebook;
-import poo_II.fabrica_de_notebooks.padrao_AbstractFactory.notebooks.Notebook;
 
-public class AsusFabrica implements FabricaNotebook {
+import poo_II.abstractFactory.fabricaDeNotebook.notebooks.MSINotebook;
+import poo_II.abstractFactory.fabricaDeNotebook.notebooks.Notebook;
+
+public class MSIFabrica implements FabricaNotebook{
 
     @Override
-    public Notebook criarNotebook(String path){
-        
+    public Notebook criarNotebook(String path) {
         String linha = "";
         
         ArrayList<String> telas = new ArrayList<String>();
@@ -45,20 +45,20 @@ public class AsusFabrica implements FabricaNotebook {
             }
 
             Random rand = new Random();
-            AsusNotebook asus = new AsusNotebook();
+            MSINotebook msi = new MSINotebook();
 
-            asus.setTela(telas.get(rand.nextInt(telas.size()))); 
-            asus.setProcessador(processadores.get(rand.nextInt(processadores.size()))); 
-            asus.setArmazenamento(armazenamentos.get(rand.nextInt(armazenamentos.size()))); 
-            asus.setRam(rams.get(rand.nextInt(rams.size())));
-            asus.setPlacaDeVideo(placasDeVideo.get(rand.nextInt(placasDeVideo.size())));
-            asus.setTeclado(teclados.get(rand.nextInt(teclados.size()))); 
-            asus.setSlotDisponivel(slotsDeMemoria.get(rand.nextInt(slotsDeMemoria.size()))); 
-            asus.setSistemaOperacional(sistemasOperacionais.get(rand.nextInt(sistemasOperacionais.size()))); 
-            asus.setCor(cores.get(rand.nextInt(cores.size()))); 
-            asus.setPlacaMae(placasMae.get(rand.nextInt(placasMae.size())));
+            msi.setTela(telas.get(rand.nextInt(telas.size()))); 
+            msi.setProcessador(processadores.get(rand.nextInt(processadores.size()))); 
+            msi.setArmazenamento(armazenamentos.get(rand.nextInt(armazenamentos.size()))); 
+            msi.setRam(rams.get(rand.nextInt(rams.size())));
+            msi.setPlacaDeVideo(placasDeVideo.get(rand.nextInt(placasDeVideo.size())));
+            msi.setTeclado(teclados.get(rand.nextInt(teclados.size()))); 
+            msi.setSlotDisponivel(slotsDeMemoria.get(rand.nextInt(slotsDeMemoria.size()))); 
+            msi.setSistemaOperacional(sistemasOperacionais.get(rand.nextInt(sistemasOperacionais.size()))); 
+            msi.setCor(cores.get(rand.nextInt(cores.size()))); 
+            msi.setPlacaMae(placasMae.get(rand.nextInt(placasMae.size())));
             
-            return asus;
+            return msi;
         
         } catch (Exception e) {
             return (Notebook) e;

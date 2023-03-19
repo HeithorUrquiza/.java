@@ -1,4 +1,4 @@
-package poo_II.fabrica_de_notebooks.padrao_normal;
+package poo_II.abstractFactory.fabricaDeNotebookNormal;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

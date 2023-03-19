@@ -1,6 +1,6 @@
-package poo_II.fabrica_de_notebooks.padrao_AbstractFactory.notebooks;
+package poo_II.abstractFactory.fabricaDeNotebookNormal;
 
-public class AsusNotebook implements Notebook{
+public class Notebook {
     
     private String tela;
     private String processador;
@@ -8,51 +8,51 @@ public class AsusNotebook implements Notebook{
     private String ram;
     private String placaDeVideo;
     private String teclado;
-    private String marca = "Asus";
+    private String marca;
     private String slotDisponivel;
     private String sistemaOperacional;
     private String cor;
     private String placaMae;
-
-
-    public AsusNotebook(){}
+    private String carcaca;
+    private String webcam;
+    
+    
+    public Notebook(String tela, String processador, String armazenamento, String ram, String placaDeVideo,
+            String teclado, String marca, String slotDisponivel, String sistemaOperacional, String cor, String placaMae,
+            String carcaca, String webcam) {
+        this.tela = tela;
+        this.processador = processador;
+        this.armazenamento = armazenamento;
+        this.ram = ram;
+        this.placaDeVideo = placaDeVideo;
+        this.teclado = teclado;
+        this.marca = marca;
+        this.slotDisponivel = slotDisponivel;
+        this.sistemaOperacional = sistemaOperacional;
+        this.cor = cor;
+        this.placaMae = placaMae;
+        this.carcaca = carcaca;
+        this.webcam = webcam;
+    }
 
 
     public String getTela() {
         return tela;
     }
-    public void setTela(String tela) {
-        this.tela = tela;
-    }
     public String getProcessador() {
         return processador;
-    }
-    public void setProcessador(String processador) {
-        this.processador = processador;
     }
     public String getArmazenamento() {
         return armazenamento;
     }
-    public void setArmazenamento(String armazenamento) {
-        this.armazenamento = armazenamento;
-    }
     public String getRam() {
         return ram;
-    }
-    public void setRam(String ram) {
-        this.ram = ram;
     }
     public String getPlacaDeVideo() {
         return placaDeVideo;
     }
-    public void setPlacaDeVideo(String placaDeVideo) {
-        this.placaDeVideo = placaDeVideo;
-    }
     public String getTeclado() {
         return teclado;
-    }
-    public void setTeclado(String teclado) {
-        this.teclado = teclado;
     }
     public String getMarca() {
         return marca;
@@ -60,31 +60,25 @@ public class AsusNotebook implements Notebook{
     public String getSlotDisponivel() {
         return slotDisponivel;
     }
-    public void setSlotDisponivel(String slotDisponivel) {
-        this.slotDisponivel = slotDisponivel;
-    }
     public String getSistemaOperacional() {
         return sistemaOperacional;
-    }
-    public void setSistemaOperacional(String sistemaOperacional) {
-        this.sistemaOperacional = sistemaOperacional;
     }
     public String getCor() {
         return cor;
     }
-    public void setCor(String cor) {
-        this.cor = cor;
-    }
     public String getPlacaMae() {
         return placaMae;
     }
-    public void setPlacaMae(String placaMae) {
-        this.placaMae = placaMae;
+    public String getCarcaca() {
+        return carcaca;
+    }
+    public String getWebcam() {
+        return webcam;
     }
 
 
     @Override
-    public String exibirNotebook() {
+    public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("\n| Tela: " + " ".repeat(16) + "|  " +getTela());
         sb.append("\n" + "-".repeat(25));
@@ -107,8 +101,13 @@ public class AsusNotebook implements Notebook{
         sb.append("\n| Cor: " + " ".repeat(17) + "|  " +getCor());
         sb.append("\n" + "-".repeat(25));
         sb.append("\n| Placa Mãe: " + " ".repeat(11) + "|  " +getPlacaMae());
+        sb.append("\n" + "-".repeat(25));
+        sb.append("\n| Carcaça: " + " ".repeat(13) + "|  " +getCarcaca());
+        sb.append("\n" + "-".repeat(25));
+        sb.append("\n| Webcam: " + " ".repeat(14) + "|  " +getWebcam());
         sb.append("\n" + "-".repeat(25) + "\n\n");
         
         return sb.toString();
     }
-}
+} 
+

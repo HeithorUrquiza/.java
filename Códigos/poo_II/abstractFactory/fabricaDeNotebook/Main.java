@@ -1,10 +1,11 @@
-package poo_II.fabrica_de_notebooks.padrao_AbstractFactory;
+package poo_II.abstractFactory.fabricaDeNotebook;
 
 import java.util.ArrayList;
-import poo_II.fabrica_de_notebooks.padrao_AbstractFactory.fabricas.AsusFabrica;
-import poo_II.fabrica_de_notebooks.padrao_AbstractFactory.fabricas.FabricaNotebook;
-import poo_II.fabrica_de_notebooks.padrao_AbstractFactory.fabricas.GigabyteFabrica;
-import poo_II.fabrica_de_notebooks.padrao_AbstractFactory.fabricas.MSIFabrica;
+
+import poo_II.abstractFactory.fabricaDeNotebook.fabricas.AsusFabrica;
+import poo_II.abstractFactory.fabricaDeNotebook.fabricas.FabricaNotebook;
+import poo_II.abstractFactory.fabricaDeNotebook.fabricas.GigabyteFabrica;
+import poo_II.abstractFactory.fabricaDeNotebook.fabricas.MSIFabrica;
 
 public class Main {
 

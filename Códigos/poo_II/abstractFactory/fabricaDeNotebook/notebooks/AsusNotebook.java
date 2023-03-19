@@ -1,6 +1,6 @@
-package poo_II.fabrica_de_notebooks.padrao_AbstractFactory.notebooks;
+package poo_II.abstractFactory.fabricaDeNotebook.notebooks;
 
-public class MSINotebook implements Notebook{
+public class AsusNotebook implements Notebook{
     
     private String tela;
     private String processador;
@@ -8,14 +8,14 @@ public class MSINotebook implements Notebook{
     private String ram;
     private String placaDeVideo;
     private String teclado;
-    private String marca = "MSI";
+    private String marca = "Asus";
     private String slotDisponivel;
     private String sistemaOperacional;
     private String cor;
     private String placaMae;
 
 
-    public MSINotebook(){}
+    public AsusNotebook(){}
 
 
     public String getTela() {

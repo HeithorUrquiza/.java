@@ -28,7 +28,7 @@ public class SistemaDeControleVoo {
 
 
     public void inicializar() throws InterruptedException{
-        String msg = "Inicializando sistema..."; 
+        String msg = "Inicializando sistema...\n"; 
         
         for(int i = 0; i < msg.length(); i++){
             if(i > 20){
@@ -36,26 +36,26 @@ public class SistemaDeControleVoo {
                 System.out.print(msg.charAt(i));
             } else {
                 System.out.print(msg.charAt(i));
-                Thread.sleep(67);
+                Thread.sleep(70);
             }
         }
     }
     
     public void ligarPilotoAutomatico() throws InterruptedException{
-        String msg = "Ativando piloto automático!!"; 
+        String msg = "\n\nAtivando piloto automático!!\n"; 
         
         for(int i = 0; i < msg.length(); i++){
             System.out.print(msg.charAt(i));
-            Thread.sleep(67);
+            Thread.sleep(70);
         }
     }
 
     public void desligarPilotoAutomatico() throws InterruptedException{
-        String msg = "Desativando piloto automático!!"; 
+        String msg = "\n\nDesativando piloto automático!!\n\n"; 
 
         for(int i = 0; i < msg.length(); i++){
             System.out.print(msg.charAt(i));
-            Thread.sleep(67);
+            Thread.sleep(70);
         }
     }
 
@@ -71,14 +71,15 @@ public class SistemaDeControleVoo {
         }
     }
 
-    public void diminuirVelocidade(int valor){
+    public void diminuirVelocidade(int valor) throws InterruptedException{
         while (this.getVelocidade() > valor) {
             if(this.getVelocidade() < 130){
                 this.setVelocidade(this.getVelocidade() - 7);
             } else {
                 this.setVelocidade(this.getVelocidade() - 13);
             }
-            System.out.println("Velocidade atual: " + this.getVelocidade());
+            System.out.println("Velocidade atual: " + this.getVelocidade() + "Km/h");
+            Thread.sleep(300);
         }
     }
 
@@ -99,7 +100,7 @@ public class SistemaDeControleVoo {
     }
 
     public void diminuirAltitude() throws InterruptedException{
-        for(int i = 0; i < 30; i++){
+        for(int i = 0; i < 29; i++){
             this.setAltura(this.getAltura() - 1500);
             System.out.println("Altitude atual: " + this.getAltura() + "m");
             Thread.sleep(1000);
@@ -115,25 +116,25 @@ public class SistemaDeControleVoo {
     }
 
     public void decolar() throws InterruptedException{
-        String msg = "Decolando!!"; 
+        String msg = "\nDecolando!!\n"; 
         
         for(int i = 0; i < msg.length(); i++){
             System.out.print(msg.charAt(i));
-            Thread.sleep(67);
+            Thread.sleep(70);
         }
     }
 
     public void pousar() throws InterruptedException{
-        String msg = "\nPousando!!"; 
+        String msg = "\nPousando!!\n\n"; 
         
         for(int i = 0; i < msg.length(); i++){
             System.out.print(msg.charAt(i));
-            Thread.sleep(67);
+            Thread.sleep(70);
         }
     }
 
     public void desligar() throws InterruptedException{
-        String msg = "Encerrando simulador..."; 
+        String msg = "\nEncerrando simulador...\n"; 
         
         for(int i = 0; i < msg.length(); i++){
             if(i > 19){
@@ -141,7 +142,7 @@ public class SistemaDeControleVoo {
                 System.out.print(msg.charAt(i));
             } else {
                 System.out.print(msg.charAt(i));
-                Thread.sleep(67);
+                Thread.sleep(70);
             }
         }
     }

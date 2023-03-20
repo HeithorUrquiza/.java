@@ -20,42 +20,36 @@ public class SimuladorDeVooFacade {
 
     public void inicarSimulador() throws InterruptedException{
         sistemaDeControleVoo.inicializar();
-        System.out.print("\n");
         sistemaDeExibicao.exibirTelaInicializacao();
-        System.out.print("\n");
     }
 
     public void decolar() throws InterruptedException{
-        sistemaDeControleVoo.aumentarVelocidade(280);
-        System.out.print("\n");
-        sistemaDeControleVoo.decolar();
         sistemaAudio.somDecolagem();
-        System.out.print("\n\n");
+        sistemaDeControleVoo.aumentarVelocidade(280);
+        sistemaDeControleVoo.decolar();
         sistemaDeExibicao.exibirTelaDecolagem();
-        System.out.println("\n");
-
     }
 
     public void voar() throws InterruptedException{
-        /*sistemaDeControleVoo.ligarPilotoAutomatico();
-        System.out.println("\n");
-        sistemaDeExibicao.exibirTelaVoo();
-        System.out.println(" ");*/
+        sistemaDeControleVoo.ligarPilotoAutomatico();
         sistemaAudio.tocarMusicaFundo();
+        sistemaDeExibicao.exibirTelaVoo();
         System.out.println("\nTemperatura atual: " + sistemaDeControleVoo.getTemperatura() + "°C\n");
         sistemaDeControleVoo.aumentarAltitude();
-        
     }
 
     public void pousar() throws InterruptedException{
-        Thread.sleep(7000);
+        Thread.sleep(9000);
         sistemaDeControleVoo.desligarPilotoAutomatico();
-        System.out.println("\n");
         sistemaDeControleVoo.diminuirAltitude();
         sistemaDeControleVoo.pousar();
-        sistemaDeControleVoo.diminuirVelocidade(0);
-        sistemaDeExibicao.exibirTelaPouso();
         sistemaAudio.pararAudio();
+        sistemaAudio.somAterrissagem();
+        sistemaDeControleVoo.diminuirVelocidade(1);
+        sistemaDeControleVoo.setAltura(sistemaDeControleVoo.getAltura() - 1500);
+        System.out.println("\nAltitude: " + sistemaDeControleVoo.getAltura() + "m");
+        sistemaDeExibicao.exibirTelaPouso();
+        Thread.sleep(1500);
     }
 
     public void encerrarSimulador() throws InterruptedException{

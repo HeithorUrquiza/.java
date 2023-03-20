@@ -1,8 +1,6 @@
-package poo_II.facade.sistemas;
+package poo_II.facade;
 
-import poo_II.facade.SimuladorDeVooFacade;
-
-public class TesteSound {
+public class Main {
     public static void main(String[] args) throws InterruptedException {
         SimuladorDeVooFacade si = new SimuladorDeVooFacade();
 

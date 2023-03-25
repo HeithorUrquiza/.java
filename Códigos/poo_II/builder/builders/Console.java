@@ -2,10 +2,10 @@ package poo_II.builder.builders;
 
 public class Console {
     
-    private String placaDeVideo;
-    private String CPU;
-    private String armazenamento;
-    private String ram;
+    private String placaDeVideo = null;
+    private String CPU = null;
+    private String armazenamento = null;
+    private String ram = null;
     
     
     public Console() {

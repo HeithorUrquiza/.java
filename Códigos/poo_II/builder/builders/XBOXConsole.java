@@ -13,32 +13,34 @@ public class XBOXConsole implements ConsoleBuilder {
     @Override
     public void buildPlacaDeVideo(String peca) {
         xbox.setPlacaDeVideo(peca);
-        throw new UnsupportedOperationException("Unimplemented method 'buildPlacaDeVideo'");
     }
 
     @Override
     public void buildCPU(String peca) {
         xbox.setCPU(peca);
-        throw new UnsupportedOperationException("Unimplemented method 'buildCPU'");
     }
 
     @Override
     public void buildArmazenamento(String peca) {
         xbox.setArmazenamento(peca);
-        throw new UnsupportedOperationException("Unimplemented method 'buildArmazenamento'");
     }
 
     @Override
     public void buildRam(String peca) {
         xbox.setRam(peca);
-        throw new UnsupportedOperationException("Unimplemented method 'buildRam'");
     }
 
-    public Console getXBOX(){
+    @Override
+    public Console getConsole(){
         return this.xbox;
     }
     
     public void reset(){
         this.xbox = new Console();
     }    
+
+    @Override
+    public String toString() {
+        return xbox.getPlacaDeVideo() + "\n" + xbox.getCPU() + "\n" +xbox.getArmazenamento()+ "\n" +xbox.getRam();
+    }
 }

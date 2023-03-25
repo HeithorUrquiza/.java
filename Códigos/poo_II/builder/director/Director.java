@@ -37,31 +37,13 @@ public class Director {
                 rams.add(item[3]);
             }
 
-            switch (config) {
-                case 1:
-                    consoleBuilder.buildPlacaDeVideo(placasDeVideo.get(0));
-                    consoleBuilder.buildCPU(cpus.get(0));
-                    consoleBuilder.buildArmazenamento(armazenamentos.get(0));
-                    consoleBuilder.buildRam(rams.get(0));
-                    break;
-
-                case 2:
-                    consoleBuilder.buildPlacaDeVideo(placasDeVideo.get(1));
-                    consoleBuilder.buildCPU(cpus.get(1));
-                    consoleBuilder.buildArmazenamento(armazenamentos.get(1));
-                    consoleBuilder.buildRam(rams.get(1));
-                    break;
-
-                case 3:
-                    consoleBuilder.buildPlacaDeVideo(placasDeVideo.get(2));
-                    consoleBuilder.buildCPU(cpus.get(2));
-                    consoleBuilder.buildArmazenamento(armazenamentos.get(2));
-                    consoleBuilder.buildRam(rams.get(2));
-                    break;
-
-                default:
-                    throw new Exception("A configuração solicitada não consta no sistema");
+            if (config == 1) {
+                consoleBuilder.buildPlacaDeVideo(placasDeVideo.get(0));
+                consoleBuilder.buildCPU(cpus.get(0));
+                consoleBuilder.buildArmazenamento(armazenamentos.get(0));
+                consoleBuilder.buildRam(rams.get(0));
             }
+            
 
         } catch (FileNotFoundException e) {
             throw new FileNotFoundException("Arquivo não encontrado");

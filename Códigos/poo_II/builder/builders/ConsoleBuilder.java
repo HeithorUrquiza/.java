@@ -5,6 +5,7 @@ public interface ConsoleBuilder {
     public void buildCPU(String peca);
     public void buildArmazenamento(String peca);
     public void buildRam(String peca);
+    public Console getConsole();
     public void reset();
 }
 

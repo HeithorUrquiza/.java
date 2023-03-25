@@ -13,32 +13,34 @@ public class PS5Console implements ConsoleBuilder {
     @Override
     public void buildPlacaDeVideo(String peca) {
         ps5.setPlacaDeVideo(peca);    
-        throw new UnsupportedOperationException("Unimplemented method 'buildPlacaDeVideo'");
     }
 
     @Override
     public void buildCPU(String peca) {
         ps5.setCPU(peca);
-        throw new UnsupportedOperationException("Unimplemented method 'buildCPU'");
     }
 
     @Override
     public void buildArmazenamento(String peca) {
         ps5.setArmazenamento(peca);
-        throw new UnsupportedOperationException("Unimplemented method 'buildArmazenamento'");
     }
 
     @Override
     public void buildRam(String peca) {
         ps5.setRam(peca);
-        throw new UnsupportedOperationException("Unimplemented method 'buildRam'");
     }
 
-    public Console getPS5(){
+    @Override
+    public Console getConsole() {
         return this.ps5;
     }
 
     public void reset(){
         this.ps5 = new Console();
+    }
+
+    @Override
+    public String toString() {
+        return ps5.getPlacaDeVideo() + "\n" + ps5.getCPU() + "\n" +ps5.getArmazenamento()+ "\n" +ps5.getRam();
     }
 }

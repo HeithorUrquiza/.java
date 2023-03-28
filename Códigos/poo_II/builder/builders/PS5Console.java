@@ -41,6 +41,11 @@ public class PS5Console implements ConsoleBuilder {
 
     @Override
     public String toString() {
-        return ps5.getPlacaDeVideo() + "\n" + ps5.getCPU() + "\n" +ps5.getArmazenamento()+ "\n" +ps5.getRam();
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("\n ----- PS5 -----" + "\n Placa de vídeo:  " + ps5.getPlacaDeVideo());
+        sb.append("\n CPU: " + " ".repeat(12) + ps5.getCPU() + "\n Armazenamento:   " + ps5.getArmazenamento() + "\n Ram: " + " ".repeat(12) + ps5.getRam() + "\n");
+
+        return sb.toString();
     }
 }

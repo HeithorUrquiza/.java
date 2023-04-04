@@ -11,7 +11,7 @@ public class SistemaAudio {
 
     public void tocarMusicaFundo(){
         try {
-            File arquivoAudio = new File("D:\\Documentos\\GitHub\\Java_cods\\Códigos\\poo_II\\facade\\audios\\track-sound-passenger-jet-flying-interior.wav");
+            File arquivoAudio = new File("C:\\Users\\heith\\OneDrive\\Documentos\\GitHub\\Java_cods\\Códigos\\poo_II\\facade\\audios\\track-sound-passenger-jet-flying-interior.wav");
 
             clip = AudioSystem.getClip();
             clip.open(AudioSystem.getAudioInputStream(arquivoAudio));
@@ -30,7 +30,7 @@ public class SistemaAudio {
 
     public void somDecolagem(){
         try {
-            File arquivoAudio = new File("D:\\Documentos\\GitHub\\Java_cods\\Códigos\\poo_II\\facade\\audios\\track-airplane-take-off-large-airliner.wav");
+            File arquivoAudio = new File("C:\\Users\\heith\\OneDrive\\Documentos\\GitHub\\Java_cods\\Códigos\\poo_II\\facade\\audios\\track-airplane-take-off-large-airliner.wav");
 
             clip = AudioSystem.getClip();
             clip.open(AudioSystem.getAudioInputStream(arquivoAudio));
@@ -43,7 +43,7 @@ public class SistemaAudio {
 
     public void somAterrissagem(){
         try {
-            File arquivoAudio = new File("D:\\Documentos\\GitHub\\Java_cods\\Códigos\\poo_II\\facade\\audios\\track-airplane-distant-landing.wav");
+            File arquivoAudio = new File("C:\\Users\\heith\\OneDrive\\Documentos\\GitHub\\Java_cods\\Códigos\\poo_II\\facade\\audios\\track-airplane-distant-landing.wav");
 
             clip = AudioSystem.getClip();
             clip.open(AudioSystem.getAudioInputStream(arquivoAudio));
